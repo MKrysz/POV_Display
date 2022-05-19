@@ -30,6 +30,7 @@
 /* USER CODE BEGIN Includes */
 #include "led.h"
 #include "clk.h"
+#include "img.h"
 #include "array.h"
 #include <stdbool.h>
 /* USER CODE END Includes */
@@ -41,8 +42,8 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-// #define MODE_IMAGE
-#define MODE_ANALOG_CLOCK
+#define MODE_IMAGE
+// #define MODE_ANALOG_CLOCK
 // #define MODE_DIGITAL_CLOCK
 /* USER CODE END PD */
 
@@ -69,7 +70,6 @@ volatile uint16_t periodUS = 0;
 
 volatile size_t imgIdx = 0;
 
-#include "img.h"
 
 /* USER CODE END PV */
 
@@ -142,79 +142,51 @@ int main(void)
 
   while (1)
   {
+    #ifdef MODE_IMAGE
 
-    while(1)
-    {
+    const size_t imgIdxMax = IMG_SIZE;
+    LED_Send(image[(imgIdx%imgIdxMax)]);
 
-
-      #ifdef MODE_IMAGE
-
-      const size_t imgIdxMax = IMG_SIZE;
-      LED_Send(image[imgIdxMax-imgIdx-1]);
-
-      #endif
+    #endif
 
 
-      #ifdef MODE_ANALOG_CLOCK
+    #ifdef MODE_ANALOG_CLOCK
 
-      const size_t imgIdxMax = 120;
-      uint8_t sendData[8];
-      size_t tempIdx = imgIdx;         
-      // size_t tempIdx = (imgIdx + imgIdxMax/2) % imgIdxMax;
+    const size_t imgIdxMax = 120;
+    uint8_t sendData[8];
+    size_t tempIdx = imgIdx;         
+    // size_t tempIdx = (imgIdx + imgIdxMax/2) % imgIdxMax;
 
-      //add background
-      ARRAY_Copy(CLK_BKGD[tempIdx], sendData, 8);
+    //add background
+    ARRAY_Copy(CLK_BKGD[tempIdx], sendData, 8);
 
-      // //add hands
-      // RTC_TimeTypeDef currentTime; 
-      // // HAL_RTC_GetTime(&hrtc, &currentTime, RTC_FORMAT_BIN);
-      // currentTime.Hours = 3;
-      // currentTime.Minutes = 30;
-      // currentTime.Seconds = 45;
+    // //add hands
+    // RTC_TimeTypeDef currentTime; 
+    // // HAL_RTC_GetTime(&hrtc, &currentTime, RTC_FORMAT_BIN);
+    // currentTime.Hours = 3;
+    // currentTime.Minutes = 30;
+    // currentTime.Seconds = 45;
 
-      // if(currentTime.Hours * 10 == tempIdx)
-      //   ARRAY_BitwiseOR(sendData, hours, sendData, 8);
-      // if(currentTime.Minutes * 2 == tempIdx)
-      //   ARRAY_BitwiseOR(sendData, minutes, sendData, 8);
-      // if(currentTime.Seconds * 2 == tempIdx)
-      //   ARRAY_BitwiseOR(sendData, seconds, sendData, 8);
+    // if(currentTime.Hours * 10 == tempIdx)
+    //   ARRAY_BitwiseOR(sendData, hours, sendData, 8);
+    // if(currentTime.Minutes * 2 == tempIdx)
+    //   ARRAY_BitwiseOR(sendData, minutes, sendData, 8);
+    // if(currentTime.Seconds * 2 == tempIdx)
+    //   ARRAY_BitwiseOR(sendData, seconds, sendData, 8);
 
-      LED_Send(sendData);
+    LED_Send(sendData);
 
-      #endif
+    #endif
 
-      //progress in showing img
-      imgIdx++;
-      if(imgIdx == imgIdxMax){
-        imgIdx = 0;
-      }
+    //progress in showing img
+    imgIdx++;
 
-      while(__HAL_TIM_GET_COUNTER(&HTIM_US_DELAY) < (uint16_t)(periodUS/imgIdxMax));
-    __HAL_TIM_SET_COUNTER(&HTIM_US_DELAY, 0);
+    while(__HAL_TIM_GET_COUNTER(&HTIM_US_DELAY) < (uint16_t)(periodUS/imgIdxMax));
+  __HAL_TIM_SET_COUNTER(&HTIM_US_DELAY, 0);
 
-      // //calculate and execute delay
-      // uint32_t delayDurationUS = (period * 1000) / imgIdxMax;
-      // if(delayDurationUS > 60000){
-      // //   while(__HAL_TIM_GET_COUNTER(&HTIM_MS_DELAY) < (uint16_t)(period/imgIdxMax));
-      // // __HAL_TIM_SET_COUNTER(&HTIM_MS_DELAY, 0);
-      // }
-      // else{
-      //   if(period > 60){
-      //   //   while(__HAL_TIM_GET_COUNTER(&HTIM_US_DELAY) < (uint16_t)(delayDurationUS));
-      //   // __HAL_TIM_SET_COUNTER(&HTIM_US_DELAY, 0);
-      //   }
-      //   else{
-      //     while(__HAL_TIM_GET_COUNTER(&HTIM_US_DELAY) < (uint16_t)(periodUS/imgIdxMax));
-      //   __HAL_TIM_SET_COUNTER(&HTIM_US_DELAY, 0);
-      //   }
-      // }
-
-
-      //shutdown if no rotation detected for specified time
-      if(__HAL_TIM_GET_COUNTER(&HTIM_MS_GET) >= shutdownTime){
-        sleepRoutine();
-      }
-
+    //shutdown if no rotation detected for specified time
+    if(__HAL_TIM_GET_COUNTER(&HTIM_MS_GET) >= shutdownTime){
+      sleepRoutine();
     }
 
     /* USER CODE END WHILE */

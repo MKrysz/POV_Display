@@ -101,30 +101,13 @@ void GPIO_Init(){
 }
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
-
-  //measure time
-  // uint16_t timeUS = __HAL_TIM_GET_COUNTER(&HTIM_US_GET);
-  // __HAL_TIM_SET_COUNTER(&HTIM_US_GET,0);
-  // uint16_t time = __HAL_TIM_GET_COUNTER(&HTIM_MS_GET);
-  // __HAL_TIM_SET_COUNTER(&HTIM_MS_GET, 0);
-
-  // period = time;
-  // periodUS = timeUS;
-
   periodUS = __HAL_TIM_GET_COUNTER(&HTIM_US_GET);
   __HAL_TIM_SET_COUNTER(&HTIM_US_GET,0);
-  period = __HAL_TIM_GET_COUNTER(&HTIM_MS_GET);
-  __HAL_TIM_SET_COUNTER(&HTIM_MS_GET, 0);
+  // period = __HAL_TIM_GET_COUNTER(&HTIM_MS_GET);
+  // __HAL_TIM_SET_COUNTER(&HTIM_MS_GET, 0);
 
-  // //anchor the image
-  // if(i%15 == 0)
-  // imgIdx = 0;
-  // __HAL_TIM_SET_COUNTER(&HTIM_MS_DELAY, 0);
-  // __HAL_TIM_SET_COUNTER(&HTIM_US_DELAY, 0);
-
-
-
-
+  // anchor the image
+  imgIdx = 0;
 }
 /* USER CODE END 2 */
 
