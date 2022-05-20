@@ -128,7 +128,19 @@ int main(void)
   LED_AllWhite();
   HAL_Delay(1500);
   LED_AllBlack();
-  HAL_Delay(2000);
+  
+  #ifdef MODE_IMAGE
+    const size_t imgIdxMax = IMG_SIZE;
+    for (size_t i = 0; i < imgIdxMax; i++)
+    {
+      LED_Send(image[i]);
+      HAL_Delay(2000/imgIdxMax);
+    }
+    
+  #endif
+  #ifdef MODE_ANALOG_CLOCK
+    const size_t imgIdxMax = 120;
+  #endif
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -144,8 +156,7 @@ int main(void)
   {
     #ifdef MODE_IMAGE
 
-    const size_t imgIdxMax = IMG_SIZE;
-    LED_Send(image[(imgIdx%imgIdxMax)]);
+    LED_Send(image[imgIdx%imgIdxMax]);
 
     #endif
 
@@ -181,12 +192,31 @@ int main(void)
     //progress in showing img
     imgIdx++;
 
-    while(__HAL_TIM_GET_COUNTER(&HTIM_US_DELAY) < (uint16_t)(periodUS/imgIdxMax));
-  __HAL_TIM_SET_COUNTER(&HTIM_US_DELAY, 0);
+    //delay routine
+    while(true){
+      if(period < 60){
+        //us delay from us period
+        if(__HAL_TIM_GET_COUNTER(&HTIM_US_DELAY) >= (uint16_t)(periodUS/imgIdxMax))
+          break;
+      }
+      else if(period < 60 * imgIdxMax){
+        //us delay from ms period
+        if(__HAL_TIM_GET_COUNTER(&HTIM_US_DELAY) >= (uint16_t)(period/imgIdxMax) * 1000)
+          break;
+      }
+      else{
+        //ms delay from ms period
+        if(__HAL_TIM_GET_COUNTER(&HTIM_MS_DELAY) < (uint16_t)(period/imgIdxMax))
+          break;
+      }
+    }
+    __HAL_TIM_SET_COUNTER(&HTIM_US_DELAY, 0);
+    __HAL_TIM_SET_COUNTER(&HTIM_MS_DELAY, 0);
+
 
     //shutdown if no rotation detected for specified time
     if(__HAL_TIM_GET_COUNTER(&HTIM_MS_GET) >= shutdownTime){
-      sleepRoutine();
+      // sleepRoutine();
     }
 
     /* USER CODE END WHILE */
