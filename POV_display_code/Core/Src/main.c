@@ -162,8 +162,6 @@ int main(void)
 
 
     #ifdef MODE_ANALOG_CLOCK
-
-    const size_t imgIdxMax = 120;
     uint8_t sendData[8];
     size_t tempIdx = imgIdx;         
     // size_t tempIdx = (imgIdx + imgIdxMax/2) % imgIdxMax;
