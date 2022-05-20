@@ -67,7 +67,7 @@ volatile uint16_t period = 0;
  */
 volatile uint16_t periodUS = 0;
 
-
+extern volatile bool GPIO_Flag;
 volatile size_t imgIdx = 0;
 
 
@@ -209,6 +209,11 @@ int main(void)
         if(__HAL_TIM_GET_COUNTER(&HTIM_MS_DELAY) < (uint16_t)(period/imgIdxMax))
           break;
       }
+      if(GPIO_Flag){
+        //if anchor point detected stop waiting and show another column
+        GPIO_Flag = false;
+        break;
+      }
     }
     __HAL_TIM_SET_COUNTER(&HTIM_US_DELAY, 0);
     __HAL_TIM_SET_COUNTER(&HTIM_MS_DELAY, 0);
@@ -216,7 +221,7 @@ int main(void)
 
     //shutdown if no rotation detected for specified time
     if(__HAL_TIM_GET_COUNTER(&HTIM_MS_GET) >= shutdownTime){
-      // sleepRoutine();
+      sleepRoutine();
     }
 
     /* USER CODE END WHILE */
