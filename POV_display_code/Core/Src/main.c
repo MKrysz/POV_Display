@@ -68,8 +68,19 @@ volatile uint16_t period = 0;
 volatile uint16_t periodUS = 0;
 
 extern volatile bool GPIO_Flag;
+
+/**
+ * @brief index of the currently shown column
+ * 
+ */
 volatile size_t imgIdx = 0;
 
+#ifdef MODE_IMAGE
+  const size_t imgIdxMax = IMG_SIZE;
+#endif
+#ifdef MODE_ANALOG_CLOCK
+  const size_t imgIdxMax = 120;
+#endif
 
 /* USER CODE END PV */
 
@@ -129,18 +140,6 @@ int main(void)
   HAL_Delay(1500);
   LED_AllBlack();
   
-  #ifdef MODE_IMAGE
-    const size_t imgIdxMax = IMG_SIZE;
-    for (size_t i = 0; i < imgIdxMax; i++)
-    {
-      LED_Send(image[i]);
-      HAL_Delay(2000/imgIdxMax);
-    }
-    
-  #endif
-  #ifdef MODE_ANALOG_CLOCK
-    const size_t imgIdxMax = 120;
-  #endif
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -187,39 +186,40 @@ int main(void)
 
     #endif
 
+
     //progress in showing img
     imgIdx++;
 
+
     //delay routine
     while(true){
-      if(period < 60){
+
+      if(period/imgIdxMax < 60000){
         //us delay from us period
-        if(__HAL_TIM_GET_COUNTER(&HTIM_US_DELAY) >= (uint16_t)(periodUS/imgIdxMax))
+        if(__HAL_TIM_GET_COUNTER(&HTIM_US_DELAY) >= (uint16_t)(period/imgIdxMax))
           break;
       }
-      else if(period < 60 * imgIdxMax){
-        //us delay from ms period
-        if(__HAL_TIM_GET_COUNTER(&HTIM_US_DELAY) >= (uint16_t)(period/imgIdxMax) * 1000)
-          break;
-      }
+
       else{
         //ms delay from ms period
-        if(__HAL_TIM_GET_COUNTER(&HTIM_MS_DELAY) < (uint16_t)(period/imgIdxMax))
+        if(__HAL_TIM_GET_COUNTER(&HTIM_MS_DELAY) >= (uint16_t)(period/imgIdxMax/1000))
           break;
       }
+
       if(GPIO_Flag){
         //if anchor point detected stop waiting and show another column
         GPIO_Flag = false;
         break;
       }
+
     }
     __HAL_TIM_SET_COUNTER(&HTIM_US_DELAY, 0);
     __HAL_TIM_SET_COUNTER(&HTIM_MS_DELAY, 0);
 
-
     //shutdown if no rotation detected for specified time
     if(__HAL_TIM_GET_COUNTER(&HTIM_MS_GET) >= shutdownTime){
-      sleepRoutine();
+      period = 0;
+      // sleepRoutine();
     }
 
     /* USER CODE END WHILE */
@@ -287,6 +287,7 @@ void sleepRoutine()
   HAL_SuspendTick();
   HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON, PWR_STOPENTRY_WFI);
 }
+
 
 /* USER CODE END 4 */
 

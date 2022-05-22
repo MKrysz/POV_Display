@@ -32,9 +32,9 @@
 /*----------------------------------------------------------------------------*/
 /* USER CODE BEGIN 1 */
 /*externs*/
-extern volatile uint16_t period;
-extern volatile uint16_t periodUS;
+extern volatile uint32_t period;
 extern volatile size_t imgIdx;
+extern volatile size_t imgIdxMax;
 
 /*variables*/
 
@@ -102,12 +102,26 @@ void GPIO_Init(){
 }
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
+  // if should be deleted after testing
+  // if(imgIdx < 120)
   GPIO_Flag = true;
-
-  periodUS = __HAL_TIM_GET_COUNTER(&HTIM_US_GET);
-  __HAL_TIM_SET_COUNTER(&HTIM_US_GET,0);
-  period = __HAL_TIM_GET_COUNTER(&HTIM_MS_GET);
+  // get period
+  // periodUS = __HAL_TIM_GET_COUNTER(&HTIM_US_GET);
+  // __HAL_TIM_SET_COUNTER(&HTIM_US_GET,0);
+  // period = __HAL_TIM_GET_COUNTER(&HTIM_MS_GET);
   __HAL_TIM_SET_COUNTER(&HTIM_MS_GET, 0);
+
+  const float kp = 200.0f;
+  const float ki = 100.0f;
+  const float kd = 10.0f;
+  static float integralSum = 0;
+  static float lastError = 0;
+  float error = ((float)imgIdx - (float)imgIdxMax) / (float)imgIdxMax;
+  integralSum += error;
+  
+  period = (uint32_t) (kp * error + ki * integralSum + kd * (error - lastError));
+
+  lastError = error;
 
   // anchor the image
   imgIdx = 0;
