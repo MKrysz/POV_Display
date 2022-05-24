@@ -33,6 +33,7 @@
 #include "img.h"
 #include "array.h"
 #include <stdbool.h>
+#include "log.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -134,12 +135,15 @@ int main(void)
   TIM_Init();
   GPIO_Init();
   LED_Init();
+
   LED_AllBlack();
   HAL_Delay(1500);
   LED_AllWhite();
   HAL_Delay(1500);
   LED_AllBlack();
   
+
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -194,7 +198,7 @@ int main(void)
     //delay routine
     while(true){
 
-      if(period/imgIdxMax < 60000){
+      if(period/imgIdxMax < 65000){
         //us delay from us period
         if(__HAL_TIM_GET_COUNTER(&HTIM_US_DELAY) >= (uint16_t)(period/imgIdxMax))
           break;
@@ -218,8 +222,7 @@ int main(void)
 
     //shutdown if no rotation detected for specified time
     if(__HAL_TIM_GET_COUNTER(&HTIM_MS_GET) >= shutdownTime){
-      period = 0;
-      // sleepRoutine();
+      sleepRoutine();
     }
 
     /* USER CODE END WHILE */
@@ -282,10 +285,11 @@ void SystemClock_Config(void)
 /* USER CODE BEGIN 4 */
 void sleepRoutine()
 {
+  period = 0;
   LED_AllBlack();
   
-  HAL_SuspendTick();
-  HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON, PWR_STOPENTRY_WFI);
+  // HAL_SuspendTick();
+  // HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON, PWR_STOPENTRY_WFI);
 }
 
 

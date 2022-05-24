@@ -111,12 +111,12 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
   // period = __HAL_TIM_GET_COUNTER(&HTIM_MS_GET);
   __HAL_TIM_SET_COUNTER(&HTIM_MS_GET, 0);
 
-  const float kp = 200.0f;
-  const float ki = 100.0f;
-  const float kd = 10.0f;
+  const float kp = 50000.0f;
+  const float ki = 200.0f;
+  const float kd = 0.0f;
   static float integralSum = 0;
   static float lastError = 0;
-  float error = ((float)imgIdx - (float)imgIdxMax) / (float)imgIdxMax;
+  float error = ((float)imgIdx - (float)(imgIdxMax-1)) / (float)(imgIdxMax-1);
   integralSum += error;
   
   period = (uint32_t) (kp * error + ki * integralSum + kd * (error - lastError));

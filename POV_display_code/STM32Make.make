@@ -41,6 +41,7 @@ Core/Src/array.c \
 Core/Src/dma.c \
 Core/Src/gpio.c \
 Core/Src/led.c \
+Core/Src/log.c \
 Core/Src/main.c \
 Core/Src/rtc.c \
 Core/Src/spi.c \
