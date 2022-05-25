@@ -1,7 +1,7 @@
 
 #include "array.h"
 
-void ARRAY_BitwiseOR(uint8_t *x, uint8_t *y, uint8_t *result, size_t lenght)
+void ARRAY_BitwiseOR(const uint8_t *x, const uint8_t *y, uint8_t *result, const size_t lenght)
 {
     for (size_t i = 0; i < lenght; i++)
     {

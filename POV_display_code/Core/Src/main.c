@@ -42,8 +42,8 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define MODE_IMAGE
-// #define MODE_ANALOG_CLOCK
+// #define MODE_IMAGE
+#define MODE_ANALOG_CLOCK
 // #define MODE_DIGITAL_CLOCK
 /* USER CODE END PD */
 
@@ -164,25 +164,24 @@ int main(void)
 
     #ifdef MODE_ANALOG_CLOCK
     uint8_t sendData[8];
-    size_t tempIdx = imgIdx;         
-    // size_t tempIdx = (imgIdx + imgIdxMax/2) % imgIdxMax;
+    // size_t tempIdx = imgIdx;         
+    size_t tempIdx = (imgIdx -2 + imgIdxMax/2) % imgIdxMax;
 
     //add background
     ARRAY_Copy(CLK_BKGD[tempIdx], sendData, 8);
 
     // //add hands
-    // RTC_TimeTypeDef currentTime; 
-    // // HAL_RTC_GetTime(&hrtc, &currentTime, RTC_FORMAT_BIN);
-    // currentTime.Hours = 3;
-    // currentTime.Minutes = 30;
-    // currentTime.Seconds = 45;
+    RTC_TimeTypeDef currentTime; 
+    RTC_DateTypeDef currentDate; 
+    HAL_RTC_GetTime(&hrtc, &currentTime, RTC_FORMAT_BIN);
+    HAL_RTC_GetDate(&hrtc, &currentDate, RTC_FORMAT_BIN);
 
-    // if(currentTime.Hours * 10 == tempIdx)
-    //   ARRAY_BitwiseOR(sendData, hours, sendData, 8);
-    // if(currentTime.Minutes * 2 == tempIdx)
-    //   ARRAY_BitwiseOR(sendData, minutes, sendData, 8);
-    // if(currentTime.Seconds * 2 == tempIdx)
-    //   ARRAY_BitwiseOR(sendData, seconds, sendData, 8);
+    if(currentTime.Hours * 10 == tempIdx)
+      ARRAY_BitwiseOR(sendData, hours, sendData, 8);
+    if(currentTime.Minutes * 2 == tempIdx)
+      ARRAY_BitwiseOR(sendData, minutes, sendData, 8);
+    if(currentTime.Seconds * 2 == tempIdx)
+      ARRAY_BitwiseOR(sendData, seconds, sendData, 8);
 
     LED_Send(sendData);
 
@@ -271,6 +270,7 @@ void SystemClock_Config(void)
 void sleepRoutine()
 {
   LED_AllBlack();
+  periodUS = 0;
   
   HAL_SuspendTick();
   HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON, PWR_STOPENTRY_WFI);
