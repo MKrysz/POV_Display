@@ -106,8 +106,8 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 
   periodUS = __HAL_TIM_GET_COUNTER(&HTIM_US_GET);
   __HAL_TIM_SET_COUNTER(&HTIM_US_GET,0);
-  period = __HAL_TIM_GET_COUNTER(&HTIM_MS_GET);
-  __HAL_TIM_SET_COUNTER(&HTIM_MS_GET, 0);
+  // period = __HAL_TIM_GET_COUNTER(&HTIM_MS_GET);
+  // __HAL_TIM_SET_COUNTER(&HTIM_MS_GET, 0);
 
   // anchor the image
   imgIdx = 0;

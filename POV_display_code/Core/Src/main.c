@@ -129,6 +129,7 @@ int main(void)
   HAL_Delay(1500);
   LED_AllBlack();
   
+  uint16_t prev_millis = 0;
   #ifdef MODE_IMAGE
     const size_t imgIdxMax = IMG_SIZE;
     for (size_t i = 0; i < imgIdxMax; i++)
@@ -192,34 +193,21 @@ int main(void)
 
     //delay routine
     while(true){
-      if(period < 60){
-        //us delay from us period
-        if(__HAL_TIM_GET_COUNTER(&HTIM_US_DELAY) >= (uint16_t)(periodUS/imgIdxMax))
-          break;
-      }
-      else if(period < 60 * imgIdxMax){
-        //us delay from ms period
-        if(__HAL_TIM_GET_COUNTER(&HTIM_US_DELAY) >= (uint16_t)(period/imgIdxMax) * 1000)
-          break;
-      }
-      else{
-        //ms delay from ms period
-        if(__HAL_TIM_GET_COUNTER(&HTIM_MS_DELAY) < (uint16_t)(period/imgIdxMax))
-          break;
-      }
+      //us delay from us period
+      if(__HAL_TIM_GET_COUNTER(&HTIM_US_GET) - prev_millis >= (uint16_t)(periodUS/imgIdxMax))
+        break;
       if(GPIO_Flag){
         //if anchor point detected stop waiting and show another column
         GPIO_Flag = false;
         break;
       }
     }
-    __HAL_TIM_SET_COUNTER(&HTIM_US_DELAY, 0);
-    __HAL_TIM_SET_COUNTER(&HTIM_MS_DELAY, 0);
+    prev_millis = __HAL_TIM_GET_COUNTER(&HTIM_US_GET);
 
 
     //shutdown if no rotation detected for specified time
     if(__HAL_TIM_GET_COUNTER(&HTIM_MS_GET) >= shutdownTime){
-      sleepRoutine();
+      // sleepRoutine();
     }
 
     /* USER CODE END WHILE */
