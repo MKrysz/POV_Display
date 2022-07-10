@@ -94,21 +94,21 @@ Wire Wire Line
 	2800 6100 3200 6100
 Wire Wire Line
 	2800 6200 3200 6200
-Text Label 4300 6200 2    50   ~ 0
-led_0_R
 Text Label 4300 6300 2    50   ~ 0
-led_0_G
+led_0_R
 Text Label 4300 5600 2    50   ~ 0
+led_0_G
+Text Label 4300 6200 2    50   ~ 0
 led_0_B
-Text Label 4300 5900 2    50   ~ 0
-led_1_R
 Text Label 4300 6000 2    50   ~ 0
-led_1_G
+led_1_R
 Text Label 4300 6100 2    50   ~ 0
+led_1_G
+Text Label 4300 5900 2    50   ~ 0
 led_1_B
-Text Label 6050 5600 2    50   ~ 0
-led_2_R
 Text Label 4300 5700 2    50   ~ 0
+led_2_R
+Text Label 4300 5800 2    50   ~ 0
 led_2_G
 $Comp
 L 74xx:74HC595 U5
@@ -159,53 +159,53 @@ Wire Wire Line
 Wire Wire Line
 	4400 5600 4950 5600
 Wire Wire Line
-	4000 6200 4300 6200
-Wire Wire Line
 	4000 6300 4300 6300
 Wire Wire Line
 	4000 5600 4300 5600
 Wire Wire Line
-	4000 5900 4300 5900
+	4000 6200 4300 6200
 Wire Wire Line
 	4000 6000 4300 6000
 Wire Wire Line
 	4000 6100 4300 6100
 Wire Wire Line
-	5750 5600 6050 5600
+	4000 5900 4300 5900
 Wire Wire Line
 	4000 5700 4300 5700
-Text Label 4300 5800 2    50   ~ 0
-led_2_B
-Text Label 6050 6100 2    50   ~ 0
-led_3_R
-Text Label 6050 6200 2    50   ~ 0
-led_3_G
-Text Label 6050 6300 2    50   ~ 0
-led_3_B
-Text Label 6050 5800 2    50   ~ 0
-led_4_R
-Text Label 6050 5900 2    50   ~ 0
-led_4_G
 Wire Wire Line
 	4000 5800 4300 5800
+Text Label 6050 5600 2    50   ~ 0
+led_2_B
+Text Label 6050 6200 2    50   ~ 0
+led_3_R
+Text Label 6050 6300 2    50   ~ 0
+led_3_G
+Text Label 6050 6100 2    50   ~ 0
+led_3_B
+Text Label 6050 5900 2    50   ~ 0
+led_4_R
+Text Label 6050 6000 2    50   ~ 0
+led_4_G
 Wire Wire Line
-	5750 6100 6050 6100
+	5750 5600 6050 5600
 Wire Wire Line
 	5750 6200 6050 6200
 Wire Wire Line
 	5750 6300 6050 6300
 Wire Wire Line
+	5750 6100 6050 6100
+Wire Wire Line
 	5750 5800 6050 5800
 Wire Wire Line
-	5750 5900 6050 5900
-Text Label 6050 6000 2    50   ~ 0
+	5750 6000 6050 6000
+Text Label 6050 5800 2    50   ~ 0
 led_4_B
-Text Label 7850 6300 2    50   ~ 0
+Text Label 7850 5600 2    50   ~ 0
 led_5_R
 Wire Wire Line
-	5750 6000 6050 6000
+	5750 5900 6050 5900
 Wire Wire Line
-	7550 6300 7850 6300
+	7550 5600 7850 5600
 $Comp
 L power:VCC #PWR056
 U 1 1 61AE63F6
@@ -585,105 +585,105 @@ Wire Wire Line
 	8000 7700 8000 8600
 Wire Wire Line
 	8000 8600 7550 8600
-Text Label 7850 5600 2    50   ~ 0
-led_5_G
 Text Label 6050 5700 2    50   ~ 0
+led_5_G
+Text Label 7850 6300 2    50   ~ 0
 led_5_B
-Text Label 7850 6000 2    50   ~ 0
-led_6_R
 Text Label 7850 6100 2    50   ~ 0
-led_6_G
+led_6_R
 Text Label 7850 6200 2    50   ~ 0
+led_6_G
+Text Label 7850 6000 2    50   ~ 0
 led_6_B
-Text Label 7850 5700 2    50   ~ 0
-led_7_R
 Text Label 7850 5800 2    50   ~ 0
+led_7_R
+Text Label 7850 5900 2    50   ~ 0
 led_7_G
-Wire Wire Line
-	7550 5600 7850 5600
 Wire Wire Line
 	5750 5700 6050 5700
 Wire Wire Line
-	7550 6000 7850 6000
+	7550 6300 7850 6300
 Wire Wire Line
 	7550 6100 7850 6100
 Wire Wire Line
 	7550 6200 7850 6200
 Wire Wire Line
-	7550 5700 7850 5700
+	7550 6000 7850 6000
 Wire Wire Line
 	7550 5800 7850 5800
-Text Label 7850 5900 2    50   ~ 0
-led_7_B
 Wire Wire Line
 	7550 5900 7850 5900
-Text Label 4250 7700 2    50   ~ 0
-led_10_R
+Text Label 7850 5700 2    50   ~ 0
+led_7_B
+Wire Wire Line
+	7550 5700 7850 5700
 Text Label 9650 5700 2    50   ~ 0
+led_10_R
+Text Label 9650 5800 2    50   ~ 0
 led_10_G
 Wire Wire Line
-	3950 7700 4250 7700
-Wire Wire Line
 	9350 5700 9650 5700
-Text Label 9650 5800 2    50   ~ 0
-led_10_B
-Text Label 4250 8200 2    50   ~ 0
-led_11_R
-Text Label 4250 8300 2    50   ~ 0
-led_11_G
-Text Label 4250 8400 2    50   ~ 0
-led_11_B
-Text Label 4250 7900 2    50   ~ 0
-led_12_R
-Text Label 4250 8000 2    50   ~ 0
-led_12_G
 Wire Wire Line
 	9350 5800 9650 5800
+Text Label 4250 7700 2    50   ~ 0
+led_10_B
+Text Label 4250 8300 2    50   ~ 0
+led_11_R
+Text Label 4250 8400 2    50   ~ 0
+led_11_G
+Text Label 4250 8200 2    50   ~ 0
+led_11_B
+Text Label 4250 8000 2    50   ~ 0
+led_12_R
+Text Label 4250 8100 2    50   ~ 0
+led_12_G
 Wire Wire Line
-	3950 8200 4250 8200
+	3950 7700 4250 7700
 Wire Wire Line
 	3950 8300 4250 8300
 Wire Wire Line
 	3950 8400 4250 8400
 Wire Wire Line
-	3950 7900 4250 7900
+	3950 8200 4250 8200
 Wire Wire Line
 	3950 8000 4250 8000
-Text Label 4250 8100 2    50   ~ 0
-led_12_B
 Wire Wire Line
 	3950 8100 4250 8100
-Text Label 4250 7800 2    50   ~ 0
+Text Label 4250 7900 2    50   ~ 0
+led_12_B
+Wire Wire Line
+	3950 7900 4250 7900
+Text Label 6050 8400 2    50   ~ 0
 led_13_B
 Wire Wire Line
-	3950 7800 4250 7800
-Text Label 7850 7900 2    50   ~ 0
+	5750 8400 6050 8400
+Text Label 9650 7700 2    50   ~ 0
 led_18_B
-Text Label 9650 8300 2    50   ~ 0
-led_19_G
 Text Label 9650 8400 2    50   ~ 0
+led_19_G
+Text Label 9650 8200 2    50   ~ 0
 led_19_B
-Text Label 9650 7900 2    50   ~ 0
-led_20_R
 Text Label 9650 8000 2    50   ~ 0
+led_20_R
+Text Label 9650 8100 2    50   ~ 0
 led_20_G
 Wire Wire Line
-	7550 7900 7850 7900
-Wire Wire Line
-	9350 8200 9650 8200
+	9350 7700 9650 7700
 Wire Wire Line
 	9350 8300 9650 8300
 Wire Wire Line
 	9350 8400 9650 8400
 Wire Wire Line
-	9350 7900 9650 7900
+	9350 8200 9650 8200
 Wire Wire Line
 	9350 8000 9650 8000
-Text Label 9650 8100 2    50   ~ 0
-led_20_B
 Wire Wire Line
 	9350 8100 9650 8100
-Text Label 9650 8200 2    50   ~ 0
+Text Label 9650 7900 2    50   ~ 0
+led_20_B
+Wire Wire Line
+	9350 7900 9650 7900
+Text Label 9650 8300 2    50   ~ 0
 led_19_R
 $Comp
 L power:VCC #PWR043
@@ -1027,94 +1027,94 @@ Wire Wire Line
 Text Label 3650 3050 2    50   ~ 0
 FDBK
 Wire Wire Line
+	9350 5900 9650 5900
+Wire Wire Line
 	9350 6100 9650 6100
 Wire Wire Line
 	9350 6000 9650 6000
-Wire Wire Line
-	9350 5900 9650 5900
-Text Label 9650 6100 2    50   ~ 0
-led_9_B
-Text Label 9650 6000 2    50   ~ 0
-led_9_G
 Text Label 9650 5900 2    50   ~ 0
+led_9_B
+Text Label 9650 6100 2    50   ~ 0
+led_9_G
+Text Label 9650 6000 2    50   ~ 0
 led_9_R
+Wire Wire Line
+	9350 6200 9650 6200
 Wire Wire Line
 	9350 5600 9650 5600
 Wire Wire Line
 	9350 6300 9650 6300
-Wire Wire Line
-	9350 6200 9650 6200
-Text Label 9650 5600 2    50   ~ 0
-led_8_B
-Text Label 9650 6300 2    50   ~ 0
-led_8_G
 Text Label 9650 6200 2    50   ~ 0
+led_8_B
+Text Label 9650 5600 2    50   ~ 0
+led_8_G
+Text Label 9650 6300 2    50   ~ 0
 led_8_R
 Wire Wire Line
 	6200 7700 6200 8600
 Wire Wire Line
-	5750 8000 6050 8000
-Text Label 6050 8000 2    50   ~ 0
+	5750 7800 6050 7800
+Text Label 6050 7800 2    50   ~ 0
 led_15_B
+Wire Wire Line
+	5750 8000 6050 8000
 Wire Wire Line
 	5750 7900 6050 7900
 Wire Wire Line
-	5750 7800 6050 7800
+	5750 8100 6050 8100
 Wire Wire Line
 	5750 8300 6050 8300
 Wire Wire Line
 	5750 8200 6050 8200
 Wire Wire Line
-	5750 8100 6050 8100
-Wire Wire Line
-	5750 7700 6050 7700
-Text Label 6050 7900 2    50   ~ 0
+	3950 7800 4250 7800
+Text Label 6050 8000 2    50   ~ 0
 led_15_G
-Text Label 6050 7800 2    50   ~ 0
+Text Label 6050 7900 2    50   ~ 0
 led_15_R
-Text Label 6050 8300 2    50   ~ 0
-led_14_B
-Text Label 6050 8200 2    50   ~ 0
-led_14_G
 Text Label 6050 8100 2    50   ~ 0
+led_14_B
+Text Label 6050 8300 2    50   ~ 0
+led_14_G
+Text Label 6050 8200 2    50   ~ 0
 led_14_R
-Text Label 6050 7700 2    50   ~ 0
+Text Label 4250 7800 2    50   ~ 0
 led_13_G
 Wire Wire Line
-	5750 8400 6050 8400
-Text Label 6050 8400 2    50   ~ 0
+	5750 7700 6050 7700
+Text Label 6050 7700 2    50   ~ 0
 led_13_R
+Wire Wire Line
+	7550 7900 7850 7900
 Wire Wire Line
 	7550 7800 7850 7800
 Wire Wire Line
-	9350 7700 9650 7700
+	7550 8000 7850 8000
 Wire Wire Line
 	7550 8200 7850 8200
 Wire Wire Line
 	7550 8100 7850 8100
 Wire Wire Line
-	7550 8000 7850 8000
+	7550 8300 7850 8300
 Wire Wire Line
 	7550 7700 7850 7700
 Wire Wire Line
 	7550 8400 7850 8400
-Wire Wire Line
-	7550 8300 7850 8300
-Text Label 7850 7800 2    50   ~ 0
+Text Label 7850 7900 2    50   ~ 0
 led_18_G
-Text Label 9650 7700 2    50   ~ 0
+Text Label 7850 7800 2    50   ~ 0
 led_18_R
-Text Label 7850 8200 2    50   ~ 0
-led_17_B
-Text Label 7850 8100 2    50   ~ 0
-led_17_G
 Text Label 7850 8000 2    50   ~ 0
+led_17_B
+Text Label 7850 8200 2    50   ~ 0
+led_17_G
+Text Label 7850 8100 2    50   ~ 0
 led_17_R
-Text Label 7850 7700 2    50   ~ 0
-led_16_B
-Text Label 7850 8400 2    50   ~ 0
-led_16_G
 Text Label 7850 8300 2    50   ~ 0
+led_16_B
+Text Label 7850 7700 2    50   ~ 0
+led_16_G
+Text Label 7850 8400 2    50   ~ 0
 led_16_R
 $Comp
 L Regulator_Linear:HT75xx-1-SOT89 U1
@@ -2526,7 +2526,7 @@ L Device:R R12
 U 1 1 61A2221D
 P 12350 1150
 F 0 "R12" H 12420 1196 50  0000 L CNN
-F 1 "10K" H 12420 1105 50  0000 L CNN
+F 1 "470R" H 12420 1105 50  0000 L CNN
 F 2 "Resistor_SMD:R_0603_1608Metric" V 12280 1150 50  0001 C CNN
 F 3 "~" H 12350 1150 50  0001 C CNN
 	1    12350 1150
@@ -2546,1027 +2546,127 @@ Wire Wire Line
 Wire Wire Line
 	11750 1750 11750 1800
 Wire Wire Line
-	15150 7900 14850 7900
-Wire Wire Line
-	15550 7900 15250 7900
-Wire Wire Line
-	15950 7900 15650 7900
-Wire Wire Line
 	15650 8250 15650 8200
-Text Label 15150 7900 2    50   ~ 0
-led_20_B
-$Comp
-L Device:R R74
-U 1 1 61DEC37E
-P 14850 8050
-F 0 "R74" H 14920 8096 50  0000 L CNN
-F 1 "10K" H 14920 8005 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 14780 8050 50  0001 C CNN
-F 3 "~" H 14850 8050 50  0001 C CNN
-	1    14850 8050
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	15250 8250 15250 8200
-Text Label 15550 7900 2    50   ~ 0
-led_20_G
-$Comp
-L Device:R R67
-U 1 1 61DEC369
-P 15250 8050
-F 0 "R67" H 15320 8096 50  0000 L CNN
-F 1 "10K" H 15320 8005 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 15180 8050 50  0001 C CNN
-F 3 "~" H 15250 8050 50  0001 C CNN
-	1    15250 8050
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	14850 8250 14850 8200
-Text Label 15950 7900 2    50   ~ 0
-led_20_R
-$Comp
-L Device:R R60
-U 1 1 61DEC354
-P 15650 8050
-F 0 "R60" H 15720 8096 50  0000 L CNN
-F 1 "10K" H 15720 8005 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 15580 8050 50  0001 C CNN
-F 3 "~" H 15650 8050 50  0001 C CNN
-	1    15650 8050
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	15150 6750 14850 6750
-Wire Wire Line
-	15550 6750 15250 6750
-Wire Wire Line
-	15950 6750 15650 6750
 Wire Wire Line
 	15650 7100 15650 7050
-Text Label 15150 6750 2    50   ~ 0
-led_19_B
-$Comp
-L Device:R R73
-U 1 1 61B45CB7
-P 14850 6900
-F 0 "R73" H 14920 6946 50  0000 L CNN
-F 1 "10K" H 14920 6855 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 14780 6900 50  0001 C CNN
-F 3 "~" H 14850 6900 50  0001 C CNN
-	1    14850 6900
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	15250 7100 15250 7050
-Text Label 15550 6750 2    50   ~ 0
-led_19_G
-$Comp
-L Device:R R66
-U 1 1 61B45CA2
-P 15250 6900
-F 0 "R66" H 15320 6946 50  0000 L CNN
-F 1 "10K" H 15320 6855 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 15180 6900 50  0001 C CNN
-F 3 "~" H 15250 6900 50  0001 C CNN
-	1    15250 6900
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	14850 7100 14850 7050
-Text Label 15950 6750 2    50   ~ 0
-led_19_R
-$Comp
-L Device:R R59
-U 1 1 61B45C8D
-P 15650 6900
-F 0 "R59" H 15720 6946 50  0000 L CNN
-F 1 "10K" H 15720 6855 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 15580 6900 50  0001 C CNN
-F 3 "~" H 15650 6900 50  0001 C CNN
-	1    15650 6900
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	15150 5600 14850 5600
-Wire Wire Line
-	15550 5600 15250 5600
-Wire Wire Line
-	15950 5600 15650 5600
 Wire Wire Line
 	15650 5950 15650 5900
-Text Label 15150 5600 2    50   ~ 0
-led_18_B
-$Comp
-L Device:R R72
-U 1 1 61B45C75
-P 14850 5750
-F 0 "R72" H 14920 5796 50  0000 L CNN
-F 1 "10K" H 14920 5705 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 14780 5750 50  0001 C CNN
-F 3 "~" H 14850 5750 50  0001 C CNN
-	1    14850 5750
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	15250 5950 15250 5900
-Text Label 15550 5600 2    50   ~ 0
-led_18_G
-$Comp
-L Device:R R65
-U 1 1 61B45C60
-P 15250 5750
-F 0 "R65" H 15320 5796 50  0000 L CNN
-F 1 "10K" H 15320 5705 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 15180 5750 50  0001 C CNN
-F 3 "~" H 15250 5750 50  0001 C CNN
-	1    15250 5750
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	14850 5950 14850 5900
-Text Label 15950 5600 2    50   ~ 0
-led_18_R
-$Comp
-L Device:R R58
-U 1 1 61B45C4B
-P 15650 5750
-F 0 "R58" H 15720 5796 50  0000 L CNN
-F 1 "10K" H 15720 5705 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 15580 5750 50  0001 C CNN
-F 3 "~" H 15650 5750 50  0001 C CNN
-	1    15650 5750
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	15150 4450 14850 4450
-Wire Wire Line
-	15550 4450 15250 4450
-Wire Wire Line
-	15950 4450 15650 4450
 Wire Wire Line
 	15650 4800 15650 4750
-Text Label 15150 4450 2    50   ~ 0
-led_17_B
-$Comp
-L Device:R R71
-U 1 1 61B45C33
-P 14850 4600
-F 0 "R71" H 14920 4646 50  0000 L CNN
-F 1 "10K" H 14920 4555 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 14780 4600 50  0001 C CNN
-F 3 "~" H 14850 4600 50  0001 C CNN
-	1    14850 4600
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	15250 4800 15250 4750
-Text Label 15550 4450 2    50   ~ 0
-led_17_G
-$Comp
-L Device:R R64
-U 1 1 61B45C1E
-P 15250 4600
-F 0 "R64" H 15320 4646 50  0000 L CNN
-F 1 "10K" H 15320 4555 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 15180 4600 50  0001 C CNN
-F 3 "~" H 15250 4600 50  0001 C CNN
-	1    15250 4600
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	14850 4800 14850 4750
-Text Label 15950 4450 2    50   ~ 0
-led_17_R
-$Comp
-L Device:R R57
-U 1 1 61B45C09
-P 15650 4600
-F 0 "R57" H 15720 4646 50  0000 L CNN
-F 1 "10K" H 15720 4555 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 15580 4600 50  0001 C CNN
-F 3 "~" H 15650 4600 50  0001 C CNN
-	1    15650 4600
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	15150 3300 14850 3300
-Wire Wire Line
-	15550 3300 15250 3300
-Wire Wire Line
-	15950 3300 15650 3300
 Wire Wire Line
 	15650 3650 15650 3600
-Text Label 15150 3300 2    50   ~ 0
-led_16_B
-$Comp
-L Device:R R70
-U 1 1 61B45BF1
-P 14850 3450
-F 0 "R70" H 14920 3496 50  0000 L CNN
-F 1 "10K" H 14920 3405 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 14780 3450 50  0001 C CNN
-F 3 "~" H 14850 3450 50  0001 C CNN
-	1    14850 3450
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	15250 3650 15250 3600
-Text Label 15550 3300 2    50   ~ 0
-led_16_G
-$Comp
-L Device:R R63
-U 1 1 61B45BDC
-P 15250 3450
-F 0 "R63" H 15320 3496 50  0000 L CNN
-F 1 "10K" H 15320 3405 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 15180 3450 50  0001 C CNN
-F 3 "~" H 15250 3450 50  0001 C CNN
-	1    15250 3450
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	14850 3650 14850 3600
-Text Label 15950 3300 2    50   ~ 0
-led_16_R
-$Comp
-L Device:R R56
-U 1 1 61B45BC7
-P 15650 3450
-F 0 "R56" H 15720 3496 50  0000 L CNN
-F 1 "10K" H 15720 3405 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 15580 3450 50  0001 C CNN
-F 3 "~" H 15650 3450 50  0001 C CNN
-	1    15650 3450
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	15150 2150 14850 2150
-Wire Wire Line
-	15550 2150 15250 2150
-Wire Wire Line
-	15950 2150 15650 2150
 Wire Wire Line
 	15650 2500 15650 2450
-Text Label 15150 2150 2    50   ~ 0
-led_15_B
-$Comp
-L Device:R R69
-U 1 1 61B45BAF
-P 14850 2300
-F 0 "R69" H 14920 2346 50  0000 L CNN
-F 1 "10K" H 14920 2255 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 14780 2300 50  0001 C CNN
-F 3 "~" H 14850 2300 50  0001 C CNN
-	1    14850 2300
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	15250 2500 15250 2450
-Text Label 15550 2150 2    50   ~ 0
-led_15_G
-$Comp
-L Device:R R62
-U 1 1 61B45B9A
-P 15250 2300
-F 0 "R62" H 15320 2346 50  0000 L CNN
-F 1 "10K" H 15320 2255 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 15180 2300 50  0001 C CNN
-F 3 "~" H 15250 2300 50  0001 C CNN
-	1    15250 2300
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	14850 2500 14850 2450
-Text Label 15950 2150 2    50   ~ 0
-led_15_R
-$Comp
-L Device:R R55
-U 1 1 61B45B85
-P 15650 2300
-F 0 "R55" H 15720 2346 50  0000 L CNN
-F 1 "10K" H 15720 2255 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 15580 2300 50  0001 C CNN
-F 3 "~" H 15650 2300 50  0001 C CNN
-	1    15650 2300
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	15150 1000 14850 1000
-Wire Wire Line
-	15550 1000 15250 1000
-Wire Wire Line
-	15950 1000 15650 1000
 Wire Wire Line
 	15650 1350 15650 1300
-Text Label 15150 1000 2    50   ~ 0
-led_14_B
-$Comp
-L Device:R R68
-U 1 1 61B45B6D
-P 14850 1150
-F 0 "R68" H 14920 1196 50  0000 L CNN
-F 1 "10K" H 14920 1105 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 14780 1150 50  0001 C CNN
-F 3 "~" H 14850 1150 50  0001 C CNN
-	1    14850 1150
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	15250 1350 15250 1300
-Text Label 15550 1000 2    50   ~ 0
-led_14_G
-$Comp
-L Device:R R61
-U 1 1 61B45B58
-P 15250 1150
-F 0 "R61" H 15320 1196 50  0000 L CNN
-F 1 "10K" H 15320 1105 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 15180 1150 50  0001 C CNN
-F 3 "~" H 15250 1150 50  0001 C CNN
-	1    15250 1150
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	14850 1350 14850 1300
-Text Label 15950 1000 2    50   ~ 0
-led_14_R
-$Comp
-L Device:R R54
-U 1 1 61B45B43
-P 15650 1150
-F 0 "R54" H 15720 1196 50  0000 L CNN
-F 1 "10K" H 15720 1105 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 15580 1150 50  0001 C CNN
-F 3 "~" H 15650 1150 50  0001 C CNN
-	1    15650 1150
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	13500 7900 13200 7900
-Wire Wire Line
-	13900 7900 13600 7900
-Wire Wire Line
-	14300 7900 14000 7900
 Wire Wire Line
 	14000 8250 14000 8200
-Text Label 13500 7900 2    50   ~ 0
-led_13_B
-$Comp
-L Device:R R53
-U 1 1 61B2A61C
-P 13200 8050
-F 0 "R53" H 13270 8096 50  0000 L CNN
-F 1 "10K" H 13270 8005 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 13130 8050 50  0001 C CNN
-F 3 "~" H 13200 8050 50  0001 C CNN
-	1    13200 8050
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	13600 8250 13600 8200
-Text Label 13900 7900 2    50   ~ 0
-led_13_G
-$Comp
-L Device:R R46
-U 1 1 61B2A607
-P 13600 8050
-F 0 "R46" H 13670 8096 50  0000 L CNN
-F 1 "10K" H 13670 8005 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 13530 8050 50  0001 C CNN
-F 3 "~" H 13600 8050 50  0001 C CNN
-	1    13600 8050
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	13200 8250 13200 8200
-Text Label 14300 7900 2    50   ~ 0
-led_13_R
-$Comp
-L Device:R R39
-U 1 1 61B2A5F2
-P 14000 8050
-F 0 "R39" H 14070 8096 50  0000 L CNN
-F 1 "10K" H 14070 8005 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 13930 8050 50  0001 C CNN
-F 3 "~" H 14000 8050 50  0001 C CNN
-	1    14000 8050
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	13500 6750 13200 6750
-Wire Wire Line
-	13900 6750 13600 6750
-Wire Wire Line
-	14300 6750 14000 6750
 Wire Wire Line
 	14000 7100 14000 7050
-Text Label 13500 6750 2    50   ~ 0
-led_12_B
-$Comp
-L Device:R R52
-U 1 1 61B2A5DA
-P 13200 6900
-F 0 "R52" H 13270 6946 50  0000 L CNN
-F 1 "10K" H 13270 6855 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 13130 6900 50  0001 C CNN
-F 3 "~" H 13200 6900 50  0001 C CNN
-	1    13200 6900
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	13600 7100 13600 7050
-Text Label 13900 6750 2    50   ~ 0
-led_12_G
-$Comp
-L Device:R R45
-U 1 1 61B2A5C5
-P 13600 6900
-F 0 "R45" H 13670 6946 50  0000 L CNN
-F 1 "10K" H 13670 6855 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 13530 6900 50  0001 C CNN
-F 3 "~" H 13600 6900 50  0001 C CNN
-	1    13600 6900
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	13200 7100 13200 7050
-Text Label 14300 6750 2    50   ~ 0
-led_12_R
-$Comp
-L Device:R R38
-U 1 1 61B2A5B0
-P 14000 6900
-F 0 "R38" H 14070 6946 50  0000 L CNN
-F 1 "10K" H 14070 6855 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 13930 6900 50  0001 C CNN
-F 3 "~" H 14000 6900 50  0001 C CNN
-	1    14000 6900
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	13500 5600 13200 5600
-Wire Wire Line
-	13900 5600 13600 5600
-Wire Wire Line
-	14300 5600 14000 5600
 Wire Wire Line
 	14000 5950 14000 5900
-Text Label 13500 5600 2    50   ~ 0
-led_11_B
-$Comp
-L Device:R R51
-U 1 1 61B2A598
-P 13200 5750
-F 0 "R51" H 13270 5796 50  0000 L CNN
-F 1 "10K" H 13270 5705 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 13130 5750 50  0001 C CNN
-F 3 "~" H 13200 5750 50  0001 C CNN
-	1    13200 5750
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	13600 5950 13600 5900
-Text Label 13900 5600 2    50   ~ 0
-led_11_G
-$Comp
-L Device:R R44
-U 1 1 61B2A583
-P 13600 5750
-F 0 "R44" H 13670 5796 50  0000 L CNN
-F 1 "10K" H 13670 5705 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 13530 5750 50  0001 C CNN
-F 3 "~" H 13600 5750 50  0001 C CNN
-	1    13600 5750
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	13200 5950 13200 5900
-Text Label 14300 5600 2    50   ~ 0
-led_11_R
-$Comp
-L Device:R R37
-U 1 1 61B2A56E
-P 14000 5750
-F 0 "R37" H 14070 5796 50  0000 L CNN
-F 1 "10K" H 14070 5705 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 13930 5750 50  0001 C CNN
-F 3 "~" H 14000 5750 50  0001 C CNN
-	1    14000 5750
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	13500 4450 13200 4450
-Wire Wire Line
-	13900 4450 13600 4450
-Wire Wire Line
-	14300 4450 14000 4450
 Wire Wire Line
 	14000 4800 14000 4750
-Text Label 13500 4450 2    50   ~ 0
-led_10_B
-$Comp
-L Device:R R50
-U 1 1 61B2A556
-P 13200 4600
-F 0 "R50" H 13270 4646 50  0000 L CNN
-F 1 "10K" H 13270 4555 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 13130 4600 50  0001 C CNN
-F 3 "~" H 13200 4600 50  0001 C CNN
-	1    13200 4600
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	13600 4800 13600 4750
-Text Label 13900 4450 2    50   ~ 0
-led_10_G
-$Comp
-L Device:R R43
-U 1 1 61B2A541
-P 13600 4600
-F 0 "R43" H 13670 4646 50  0000 L CNN
-F 1 "10K" H 13670 4555 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 13530 4600 50  0001 C CNN
-F 3 "~" H 13600 4600 50  0001 C CNN
-	1    13600 4600
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	13200 4800 13200 4750
-Text Label 14300 4450 2    50   ~ 0
-led_10_R
-$Comp
-L Device:R R36
-U 1 1 61B2A52C
-P 14000 4600
-F 0 "R36" H 14070 4646 50  0000 L CNN
-F 1 "10K" H 14070 4555 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 13930 4600 50  0001 C CNN
-F 3 "~" H 14000 4600 50  0001 C CNN
-	1    14000 4600
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	13500 3300 13200 3300
-Wire Wire Line
-	13900 3300 13600 3300
-Wire Wire Line
-	14300 3300 14000 3300
 Wire Wire Line
 	14000 3650 14000 3600
-Text Label 13500 3300 2    50   ~ 0
-led_9_B
-$Comp
-L Device:R R49
-U 1 1 61B2A514
-P 13200 3450
-F 0 "R49" H 13270 3496 50  0000 L CNN
-F 1 "10K" H 13270 3405 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 13130 3450 50  0001 C CNN
-F 3 "~" H 13200 3450 50  0001 C CNN
-	1    13200 3450
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	13600 3650 13600 3600
-Text Label 13900 3300 2    50   ~ 0
-led_9_G
-$Comp
-L Device:R R42
-U 1 1 61B2A4FF
-P 13600 3450
-F 0 "R42" H 13670 3496 50  0000 L CNN
-F 1 "10K" H 13670 3405 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 13530 3450 50  0001 C CNN
-F 3 "~" H 13600 3450 50  0001 C CNN
-	1    13600 3450
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	13200 3650 13200 3600
-Text Label 14300 3300 2    50   ~ 0
-led_9_R
-$Comp
-L Device:R R35
-U 1 1 61B2A4EA
-P 14000 3450
-F 0 "R35" H 14070 3496 50  0000 L CNN
-F 1 "10K" H 14070 3405 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 13930 3450 50  0001 C CNN
-F 3 "~" H 14000 3450 50  0001 C CNN
-	1    14000 3450
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	13500 2150 13200 2150
-Wire Wire Line
-	13900 2150 13600 2150
-Wire Wire Line
-	14300 2150 14000 2150
 Wire Wire Line
 	14000 2500 14000 2450
-Text Label 13500 2150 2    50   ~ 0
-led_8_B
-$Comp
-L Device:R R48
-U 1 1 61B2A4D2
-P 13200 2300
-F 0 "R48" H 13270 2346 50  0000 L CNN
-F 1 "10K" H 13270 2255 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 13130 2300 50  0001 C CNN
-F 3 "~" H 13200 2300 50  0001 C CNN
-	1    13200 2300
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	13600 2500 13600 2450
-Text Label 13900 2150 2    50   ~ 0
-led_8_G
-$Comp
-L Device:R R41
-U 1 1 61B2A4BD
-P 13600 2300
-F 0 "R41" H 13670 2346 50  0000 L CNN
-F 1 "10K" H 13670 2255 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 13530 2300 50  0001 C CNN
-F 3 "~" H 13600 2300 50  0001 C CNN
-	1    13600 2300
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	13200 2500 13200 2450
-Text Label 14300 2150 2    50   ~ 0
-led_8_R
-$Comp
-L Device:R R34
-U 1 1 61B2A4A8
-P 14000 2300
-F 0 "R34" H 14070 2346 50  0000 L CNN
-F 1 "10K" H 14070 2255 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 13930 2300 50  0001 C CNN
-F 3 "~" H 14000 2300 50  0001 C CNN
-	1    14000 2300
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	13500 1000 13200 1000
-Wire Wire Line
-	13900 1000 13600 1000
-Wire Wire Line
-	14300 1000 14000 1000
 Wire Wire Line
 	14000 1350 14000 1300
-Text Label 13500 1000 2    50   ~ 0
-led_7_B
-$Comp
-L Device:R R47
-U 1 1 61B2A490
-P 13200 1150
-F 0 "R47" H 13270 1196 50  0000 L CNN
-F 1 "10K" H 13270 1105 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 13130 1150 50  0001 C CNN
-F 3 "~" H 13200 1150 50  0001 C CNN
-	1    13200 1150
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	13600 1350 13600 1300
-Text Label 13900 1000 2    50   ~ 0
-led_7_G
-$Comp
-L Device:R R40
-U 1 1 61B2A47B
-P 13600 1150
-F 0 "R40" H 13670 1196 50  0000 L CNN
-F 1 "10K" H 13670 1105 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 13530 1150 50  0001 C CNN
-F 3 "~" H 13600 1150 50  0001 C CNN
-	1    13600 1150
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	13200 1350 13200 1300
-Text Label 14300 1000 2    50   ~ 0
-led_7_R
-$Comp
-L Device:R R33
-U 1 1 61B2A466
-P 14000 1150
-F 0 "R33" H 14070 1196 50  0000 L CNN
-F 1 "10K" H 14070 1105 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 13930 1150 50  0001 C CNN
-F 3 "~" H 14000 1150 50  0001 C CNN
-	1    14000 1150
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	11850 7900 11550 7900
-Wire Wire Line
-	12250 7900 11950 7900
-Wire Wire Line
-	12650 7900 12350 7900
 Wire Wire Line
 	12350 8250 12350 8200
-Text Label 11850 7900 2    50   ~ 0
-led_6_B
-$Comp
-L Device:R R32
-U 1 1 61A6246B
-P 11550 8050
-F 0 "R32" H 11620 8096 50  0000 L CNN
-F 1 "10K" H 11620 8005 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 11480 8050 50  0001 C CNN
-F 3 "~" H 11550 8050 50  0001 C CNN
-	1    11550 8050
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	11950 8250 11950 8200
-Text Label 12250 7900 2    50   ~ 0
-led_6_G
-$Comp
-L Device:R R25
-U 1 1 61A62456
-P 11950 8050
-F 0 "R25" H 12020 8096 50  0000 L CNN
-F 1 "10K" H 12020 8005 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 11880 8050 50  0001 C CNN
-F 3 "~" H 11950 8050 50  0001 C CNN
-	1    11950 8050
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	11550 8250 11550 8200
-Text Label 12650 7900 2    50   ~ 0
-led_6_R
-$Comp
-L Device:R R18
-U 1 1 61A62441
-P 12350 8050
-F 0 "R18" H 12420 8096 50  0000 L CNN
-F 1 "10K" H 12420 8005 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 12280 8050 50  0001 C CNN
-F 3 "~" H 12350 8050 50  0001 C CNN
-	1    12350 8050
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	11850 6750 11550 6750
-Wire Wire Line
-	12250 6750 11950 6750
-Wire Wire Line
-	12650 6750 12350 6750
 Wire Wire Line
 	12350 7100 12350 7050
-Text Label 11850 6750 2    50   ~ 0
-led_5_B
-$Comp
-L Device:R R31
-U 1 1 61A5EFDA
-P 11550 6900
-F 0 "R31" H 11620 6946 50  0000 L CNN
-F 1 "10K" H 11620 6855 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 11480 6900 50  0001 C CNN
-F 3 "~" H 11550 6900 50  0001 C CNN
-	1    11550 6900
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	11950 7100 11950 7050
-Text Label 12250 6750 2    50   ~ 0
-led_5_G
-$Comp
-L Device:R R24
-U 1 1 61A5EFC5
-P 11950 6900
-F 0 "R24" H 12020 6946 50  0000 L CNN
-F 1 "10K" H 12020 6855 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 11880 6900 50  0001 C CNN
-F 3 "~" H 11950 6900 50  0001 C CNN
-	1    11950 6900
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	11550 7100 11550 7050
-Text Label 12650 6750 2    50   ~ 0
-led_5_R
-$Comp
-L Device:R R17
-U 1 1 61A5EFB0
-P 12350 6900
-F 0 "R17" H 12420 6946 50  0000 L CNN
-F 1 "10K" H 12420 6855 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 12280 6900 50  0001 C CNN
-F 3 "~" H 12350 6900 50  0001 C CNN
-	1    12350 6900
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	11850 5600 11550 5600
-Wire Wire Line
-	12250 5600 11950 5600
-Wire Wire Line
-	12650 5600 12350 5600
 Wire Wire Line
 	12350 5950 12350 5900
-Text Label 11850 5600 2    50   ~ 0
-led_4_B
-$Comp
-L Device:R R30
-U 1 1 61A5BD96
-P 11550 5750
-F 0 "R30" H 11620 5796 50  0000 L CNN
-F 1 "10K" H 11620 5705 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 11480 5750 50  0001 C CNN
-F 3 "~" H 11550 5750 50  0001 C CNN
-	1    11550 5750
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	11950 5950 11950 5900
-Text Label 12250 5600 2    50   ~ 0
-led_4_G
-$Comp
-L Device:R R23
-U 1 1 61A5BD81
-P 11950 5750
-F 0 "R23" H 12020 5796 50  0000 L CNN
-F 1 "10K" H 12020 5705 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 11880 5750 50  0001 C CNN
-F 3 "~" H 11950 5750 50  0001 C CNN
-	1    11950 5750
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	11550 5950 11550 5900
-Text Label 12650 5600 2    50   ~ 0
-led_4_R
-$Comp
-L Device:R R16
-U 1 1 61A5BD6C
-P 12350 5750
-F 0 "R16" H 12420 5796 50  0000 L CNN
-F 1 "10K" H 12420 5705 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 12280 5750 50  0001 C CNN
-F 3 "~" H 12350 5750 50  0001 C CNN
-	1    12350 5750
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	11850 4450 11550 4450
-Wire Wire Line
-	12250 4450 11950 4450
-Wire Wire Line
-	12650 4450 12350 4450
 Wire Wire Line
 	12350 4800 12350 4750
-Text Label 11850 4450 2    50   ~ 0
-led_3_B
-$Comp
-L Device:R R29
-U 1 1 61A58F92
-P 11550 4600
-F 0 "R29" H 11620 4646 50  0000 L CNN
-F 1 "10K" H 11620 4555 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 11480 4600 50  0001 C CNN
-F 3 "~" H 11550 4600 50  0001 C CNN
-	1    11550 4600
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	11950 4800 11950 4750
-Text Label 12250 4450 2    50   ~ 0
-led_3_G
-$Comp
-L Device:R R22
-U 1 1 61A58F7D
-P 11950 4600
-F 0 "R22" H 12020 4646 50  0000 L CNN
-F 1 "10K" H 12020 4555 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 11880 4600 50  0001 C CNN
-F 3 "~" H 11950 4600 50  0001 C CNN
-	1    11950 4600
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	11550 4800 11550 4750
-Text Label 12650 4450 2    50   ~ 0
-led_3_R
-$Comp
-L Device:R R15
-U 1 1 61A58F68
-P 12350 4600
-F 0 "R15" H 12420 4646 50  0000 L CNN
-F 1 "10K" H 12420 4555 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 12280 4600 50  0001 C CNN
-F 3 "~" H 12350 4600 50  0001 C CNN
-	1    12350 4600
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	11850 3300 11550 3300
-Wire Wire Line
-	12250 3300 11950 3300
-Wire Wire Line
-	12650 3300 12350 3300
 Wire Wire Line
 	12350 3650 12350 3600
-Text Label 11850 3300 2    50   ~ 0
-led_2_B
-$Comp
-L Device:R R28
-U 1 1 61A55BDE
-P 11550 3450
-F 0 "R28" H 11620 3496 50  0000 L CNN
-F 1 "10K" H 11620 3405 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 11480 3450 50  0001 C CNN
-F 3 "~" H 11550 3450 50  0001 C CNN
-	1    11550 3450
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	11950 3650 11950 3600
-Text Label 12250 3300 2    50   ~ 0
-led_2_G
-$Comp
-L Device:R R21
-U 1 1 61A55BC9
-P 11950 3450
-F 0 "R21" H 12020 3496 50  0000 L CNN
-F 1 "10K" H 12020 3405 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 11880 3450 50  0001 C CNN
-F 3 "~" H 11950 3450 50  0001 C CNN
-	1    11950 3450
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	11550 3650 11550 3600
-Text Label 12650 3300 2    50   ~ 0
-led_2_R
-$Comp
-L Device:R R14
-U 1 1 61A55BB4
-P 12350 3450
-F 0 "R14" H 12420 3496 50  0000 L CNN
-F 1 "10K" H 12420 3405 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 12280 3450 50  0001 C CNN
-F 3 "~" H 12350 3450 50  0001 C CNN
-	1    12350 3450
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	11850 2150 11550 2150
-Wire Wire Line
-	12250 2150 11950 2150
-Wire Wire Line
-	12650 2150 12350 2150
 Wire Wire Line
 	12350 2500 12350 2450
-Text Label 11850 2150 2    50   ~ 0
-led_1_B
-$Comp
-L Device:R R27
-U 1 1 61A53889
-P 11550 2300
-F 0 "R27" H 11620 2346 50  0000 L CNN
-F 1 "10K" H 11620 2255 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 11480 2300 50  0001 C CNN
-F 3 "~" H 11550 2300 50  0001 C CNN
-	1    11550 2300
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	11950 2500 11950 2450
-Text Label 12250 2150 2    50   ~ 0
-led_1_G
-$Comp
-L Device:R R20
-U 1 1 61A53874
-P 11950 2300
-F 0 "R20" H 12020 2346 50  0000 L CNN
-F 1 "10K" H 12020 2255 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 11880 2300 50  0001 C CNN
-F 3 "~" H 11950 2300 50  0001 C CNN
-	1    11950 2300
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	11550 2500 11550 2450
-Text Label 12650 2150 2    50   ~ 0
-led_1_R
-$Comp
-L Device:R R13
-U 1 1 61A5385F
-P 12350 2300
-F 0 "R13" H 12420 2346 50  0000 L CNN
-F 1 "10K" H 12420 2255 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 12280 2300 50  0001 C CNN
-F 3 "~" H 12350 2300 50  0001 C CNN
-	1    12350 2300
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
-	12250 1000 11950 1000
+	11250 1000 11550 1000
 Wire Wire Line
 	12350 1350 12350 1300
 $Comp
@@ -3574,7 +2674,7 @@ L Device:R R26
 U 1 1 61A20661
 P 11550 1150
 F 0 "R26" H 11620 1196 50  0000 L CNN
-F 1 "10K" H 11620 1105 50  0000 L CNN
+F 1 "1K" H 11620 1105 50  0000 L CNN
 F 2 "Resistor_SMD:R_0603_1608Metric" V 11480 1150 50  0001 C CNN
 F 3 "~" H 11550 1150 50  0001 C CNN
 	1    11550 1150
@@ -3584,7 +2684,7 @@ Wire Wire Line
 	11950 1850 11950 1800
 Wire Wire Line
 	11950 1350 11950 1300
-Text Label 12250 1000 2    50   ~ 0
+Text Label 11250 1000 0    50   ~ 0
 led_0_G
 $Comp
 L power:GND #PWR062
@@ -3602,7 +2702,7 @@ L Device:R R19
 U 1 1 61A1E93A
 P 11950 1150
 F 0 "R19" H 12020 1196 50  0000 L CNN
-F 1 "10K" H 12020 1105 50  0000 L CNN
+F 1 "1K" H 12020 1105 50  0000 L CNN
 F 2 "Resistor_SMD:R_0603_1608Metric" V 11880 1150 50  0001 C CNN
 F 3 "~" H 11950 1150 50  0001 C CNN
 	1    11950 1150
@@ -3997,9 +3097,9 @@ Wire Wire Line
 Wire Wire Line
 	1950 6450 1950 6400
 Wire Notes Line
-	2600 8500 500  8500
+	2600 7050 500  7050
 Wire Notes Line
-	500  500  500  8500
+	500  550  500  8550
 $Comp
 L power:VCC #PWR0101
 U 1 1 62B0EA6E
@@ -4047,13 +3147,13 @@ F 3 "" H 12000 2000 50  0001 C CNN
 	1    12000 1550
 	0    -1   -1   0   
 $EndComp
-Text Label 11850 1000 2    50   ~ 0
+Text Label 12050 1000 0    50   ~ 0
 led_0_B
 Wire Wire Line
-	11850 1000 11550 1000
+	12050 1000 12350 1000
 Wire Wire Line
-	12650 1000 12350 1000
-Text Label 12650 1000 2    50   ~ 0
+	11650 1000 11950 1000
+Text Label 11650 1000 0    50   ~ 0
 led_0_R
 Wire Wire Line
 	11950 5250 12150 5250
@@ -4279,4 +3379,904 @@ F 3 "" H 15300 8900 50  0001 C CNN
 	1    15300 8450
 	0    -1   -1   0   
 $EndComp
+$Comp
+L Device:R R?
+U 1 1 652B2DF7
+P 14000 1150
+F 0 "R?" H 14070 1196 50  0000 L CNN
+F 1 "470R" H 14070 1105 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 13930 1150 50  0001 C CNN
+F 3 "~" H 14000 1150 50  0001 C CNN
+	1    14000 1150
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	12900 1000 13200 1000
+$Comp
+L Device:R R?
+U 1 1 652B2DFE
+P 13200 1150
+F 0 "R?" H 13270 1196 50  0000 L CNN
+F 1 "1K" H 13270 1105 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 13130 1150 50  0001 C CNN
+F 3 "~" H 13200 1150 50  0001 C CNN
+	1    13200 1150
+	-1   0    0    -1  
+$EndComp
+Text Label 12900 1000 0    50   ~ 0
+led_7_G
+$Comp
+L Device:R R?
+U 1 1 652B2E05
+P 13600 1150
+F 0 "R?" H 13670 1196 50  0000 L CNN
+F 1 "1K" H 13670 1105 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 13530 1150 50  0001 C CNN
+F 3 "~" H 13600 1150 50  0001 C CNN
+	1    13600 1150
+	-1   0    0    -1  
+$EndComp
+Text Label 13700 1000 0    50   ~ 0
+led_7_B
+Wire Wire Line
+	13700 1000 14000 1000
+Wire Wire Line
+	13300 1000 13600 1000
+Text Label 13300 1000 0    50   ~ 0
+led_7_R
+$Comp
+L Device:R R?
+U 1 1 653187FB
+P 15650 1150
+F 0 "R?" H 15720 1196 50  0000 L CNN
+F 1 "470R" H 15720 1105 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 15580 1150 50  0001 C CNN
+F 3 "~" H 15650 1150 50  0001 C CNN
+	1    15650 1150
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	14550 1000 14850 1000
+$Comp
+L Device:R R?
+U 1 1 65318802
+P 14850 1150
+F 0 "R?" H 14920 1196 50  0000 L CNN
+F 1 "1K" H 14920 1105 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 14780 1150 50  0001 C CNN
+F 3 "~" H 14850 1150 50  0001 C CNN
+	1    14850 1150
+	-1   0    0    -1  
+$EndComp
+Text Label 14550 1000 0    50   ~ 0
+led_14_G
+$Comp
+L Device:R R?
+U 1 1 65318809
+P 15250 1150
+F 0 "R?" H 15320 1196 50  0000 L CNN
+F 1 "1K" H 15320 1105 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 15180 1150 50  0001 C CNN
+F 3 "~" H 15250 1150 50  0001 C CNN
+	1    15250 1150
+	-1   0    0    -1  
+$EndComp
+Text Label 15350 1000 0    50   ~ 0
+led_14_B
+Wire Wire Line
+	15350 1000 15650 1000
+Wire Wire Line
+	14950 1000 15250 1000
+Text Label 14950 1000 0    50   ~ 0
+led_14_R
+$Comp
+L Device:R R?
+U 1 1 655A6068
+P 12350 2300
+F 0 "R?" H 12420 2346 50  0000 L CNN
+F 1 "470R" H 12420 2255 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 12280 2300 50  0001 C CNN
+F 3 "~" H 12350 2300 50  0001 C CNN
+	1    12350 2300
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	11250 2150 11550 2150
+$Comp
+L Device:R R?
+U 1 1 655A606F
+P 11550 2300
+F 0 "R?" H 11620 2346 50  0000 L CNN
+F 1 "1K" H 11620 2255 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 11480 2300 50  0001 C CNN
+F 3 "~" H 11550 2300 50  0001 C CNN
+	1    11550 2300
+	-1   0    0    -1  
+$EndComp
+Text Label 11250 2150 0    50   ~ 0
+led_1_G
+$Comp
+L Device:R R?
+U 1 1 655A6076
+P 11950 2300
+F 0 "R?" H 12020 2346 50  0000 L CNN
+F 1 "1K" H 12020 2255 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 11880 2300 50  0001 C CNN
+F 3 "~" H 11950 2300 50  0001 C CNN
+	1    11950 2300
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	12050 2150 12350 2150
+Wire Wire Line
+	11650 2150 11950 2150
+$Comp
+L Device:R R?
+U 1 1 655FCB09
+P 12350 3450
+F 0 "R?" H 12420 3496 50  0000 L CNN
+F 1 "470R" H 12420 3405 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 12280 3450 50  0001 C CNN
+F 3 "~" H 12350 3450 50  0001 C CNN
+	1    12350 3450
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	11250 3300 11550 3300
+$Comp
+L Device:R R?
+U 1 1 655FCB10
+P 11550 3450
+F 0 "R?" H 11620 3496 50  0000 L CNN
+F 1 "1K" H 11620 3405 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 11480 3450 50  0001 C CNN
+F 3 "~" H 11550 3450 50  0001 C CNN
+	1    11550 3450
+	-1   0    0    -1  
+$EndComp
+Text Label 11250 3300 0    50   ~ 0
+led_2_G
+$Comp
+L Device:R R?
+U 1 1 655FCB17
+P 11950 3450
+F 0 "R?" H 12020 3496 50  0000 L CNN
+F 1 "1K" H 12020 3405 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 11880 3450 50  0001 C CNN
+F 3 "~" H 11950 3450 50  0001 C CNN
+	1    11950 3450
+	-1   0    0    -1  
+$EndComp
+Text Label 12050 3300 0    50   ~ 0
+led_2_B
+Wire Wire Line
+	12050 3300 12350 3300
+Wire Wire Line
+	11650 3300 11950 3300
+Text Label 11650 3300 0    50   ~ 0
+led_2_R
+$Comp
+L Device:R R?
+U 1 1 65654251
+P 12350 4600
+F 0 "R?" H 12420 4646 50  0000 L CNN
+F 1 "470R" H 12420 4555 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 12280 4600 50  0001 C CNN
+F 3 "~" H 12350 4600 50  0001 C CNN
+	1    12350 4600
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	11250 4450 11550 4450
+$Comp
+L Device:R R?
+U 1 1 65654258
+P 11550 4600
+F 0 "R?" H 11620 4646 50  0000 L CNN
+F 1 "1K" H 11620 4555 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 11480 4600 50  0001 C CNN
+F 3 "~" H 11550 4600 50  0001 C CNN
+	1    11550 4600
+	-1   0    0    -1  
+$EndComp
+Text Label 11250 4450 0    50   ~ 0
+led_3_G
+$Comp
+L Device:R R?
+U 1 1 6565425F
+P 11950 4600
+F 0 "R?" H 12020 4646 50  0000 L CNN
+F 1 "1K" H 12020 4555 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 11880 4600 50  0001 C CNN
+F 3 "~" H 11950 4600 50  0001 C CNN
+	1    11950 4600
+	-1   0    0    -1  
+$EndComp
+Text Label 12050 4450 0    50   ~ 0
+led_3_B
+Wire Wire Line
+	12050 4450 12350 4450
+Wire Wire Line
+	11650 4450 11950 4450
+Text Label 11650 4450 0    50   ~ 0
+led_3_R
+$Comp
+L Device:R R?
+U 1 1 656AC5A1
+P 12350 5750
+F 0 "R?" H 12420 5796 50  0000 L CNN
+F 1 "470R" H 12420 5705 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 12280 5750 50  0001 C CNN
+F 3 "~" H 12350 5750 50  0001 C CNN
+	1    12350 5750
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	11250 5600 11550 5600
+$Comp
+L Device:R R?
+U 1 1 656AC5A8
+P 11550 5750
+F 0 "R?" H 11620 5796 50  0000 L CNN
+F 1 "1K" H 11620 5705 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 11480 5750 50  0001 C CNN
+F 3 "~" H 11550 5750 50  0001 C CNN
+	1    11550 5750
+	-1   0    0    -1  
+$EndComp
+Text Label 11250 5600 0    50   ~ 0
+led_4_G
+$Comp
+L Device:R R?
+U 1 1 656AC5AF
+P 11950 5750
+F 0 "R?" H 12020 5796 50  0000 L CNN
+F 1 "1K" H 12020 5705 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 11880 5750 50  0001 C CNN
+F 3 "~" H 11950 5750 50  0001 C CNN
+	1    11950 5750
+	-1   0    0    -1  
+$EndComp
+Text Label 12050 5600 0    50   ~ 0
+led_4_B
+Wire Wire Line
+	12050 5600 12350 5600
+Wire Wire Line
+	11650 5600 11950 5600
+Text Label 11650 5600 0    50   ~ 0
+led_4_R
+$Comp
+L Device:R R?
+U 1 1 65705836
+P 12350 6900
+F 0 "R?" H 12420 6946 50  0000 L CNN
+F 1 "470R" H 12420 6855 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 12280 6900 50  0001 C CNN
+F 3 "~" H 12350 6900 50  0001 C CNN
+	1    12350 6900
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	11250 6750 11550 6750
+$Comp
+L Device:R R?
+U 1 1 6570583D
+P 11550 6900
+F 0 "R?" H 11620 6946 50  0000 L CNN
+F 1 "1K" H 11620 6855 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 11480 6900 50  0001 C CNN
+F 3 "~" H 11550 6900 50  0001 C CNN
+	1    11550 6900
+	-1   0    0    -1  
+$EndComp
+Text Label 11250 6750 0    50   ~ 0
+led_5_G
+$Comp
+L Device:R R?
+U 1 1 65705844
+P 11950 6900
+F 0 "R?" H 12020 6946 50  0000 L CNN
+F 1 "1K" H 12020 6855 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 11880 6900 50  0001 C CNN
+F 3 "~" H 11950 6900 50  0001 C CNN
+	1    11950 6900
+	-1   0    0    -1  
+$EndComp
+Text Label 12050 6750 0    50   ~ 0
+led_5_B
+Wire Wire Line
+	12050 6750 12350 6750
+Wire Wire Line
+	11650 6750 11950 6750
+Text Label 11650 6750 0    50   ~ 0
+led_5_R
+$Comp
+L Device:R R?
+U 1 1 6575F762
+P 12350 8050
+F 0 "R?" H 12420 8096 50  0000 L CNN
+F 1 "470R" H 12420 8005 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 12280 8050 50  0001 C CNN
+F 3 "~" H 12350 8050 50  0001 C CNN
+	1    12350 8050
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	11250 7900 11550 7900
+$Comp
+L Device:R R?
+U 1 1 6575F769
+P 11550 8050
+F 0 "R?" H 11620 8096 50  0000 L CNN
+F 1 "1K" H 11620 8005 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 11480 8050 50  0001 C CNN
+F 3 "~" H 11550 8050 50  0001 C CNN
+	1    11550 8050
+	-1   0    0    -1  
+$EndComp
+Text Label 11250 7900 0    50   ~ 0
+led_6_G
+$Comp
+L Device:R R?
+U 1 1 6575F770
+P 11950 8050
+F 0 "R?" H 12020 8096 50  0000 L CNN
+F 1 "1K" H 12020 8005 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 11880 8050 50  0001 C CNN
+F 3 "~" H 11950 8050 50  0001 C CNN
+	1    11950 8050
+	-1   0    0    -1  
+$EndComp
+Text Label 12050 7900 0    50   ~ 0
+led_6_B
+Wire Wire Line
+	12050 7900 12350 7900
+Wire Wire Line
+	11650 7900 11950 7900
+Text Label 11650 7900 0    50   ~ 0
+led_6_R
+$Comp
+L Device:R R?
+U 1 1 657BABC0
+P 14000 8050
+F 0 "R?" H 14070 8096 50  0000 L CNN
+F 1 "470R" H 14070 8005 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 13930 8050 50  0001 C CNN
+F 3 "~" H 14000 8050 50  0001 C CNN
+	1    14000 8050
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	12900 7900 13200 7900
+$Comp
+L Device:R R?
+U 1 1 657BABC7
+P 13200 8050
+F 0 "R?" H 13270 8096 50  0000 L CNN
+F 1 "1K" H 13270 8005 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 13130 8050 50  0001 C CNN
+F 3 "~" H 13200 8050 50  0001 C CNN
+	1    13200 8050
+	-1   0    0    -1  
+$EndComp
+Text Label 12900 7900 0    50   ~ 0
+led_13_G
+$Comp
+L Device:R R?
+U 1 1 657BABCE
+P 13600 8050
+F 0 "R?" H 13670 8096 50  0000 L CNN
+F 1 "1K" H 13670 8005 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 13530 8050 50  0001 C CNN
+F 3 "~" H 13600 8050 50  0001 C CNN
+	1    13600 8050
+	-1   0    0    -1  
+$EndComp
+Text Label 13700 7900 0    50   ~ 0
+led_13_B
+Wire Wire Line
+	13700 7900 14000 7900
+Wire Wire Line
+	13300 7900 13600 7900
+Text Label 13300 7900 0    50   ~ 0
+led_13_R
+$Comp
+L Device:R R?
+U 1 1 6581670D
+P 15650 8050
+F 0 "R?" H 15720 8096 50  0000 L CNN
+F 1 "470R" H 15720 8005 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 15580 8050 50  0001 C CNN
+F 3 "~" H 15650 8050 50  0001 C CNN
+	1    15650 8050
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	14550 7900 14850 7900
+$Comp
+L Device:R R?
+U 1 1 65816714
+P 14850 8050
+F 0 "R?" H 14920 8096 50  0000 L CNN
+F 1 "1K" H 14920 8005 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 14780 8050 50  0001 C CNN
+F 3 "~" H 14850 8050 50  0001 C CNN
+	1    14850 8050
+	-1   0    0    -1  
+$EndComp
+Text Label 14550 7900 0    50   ~ 0
+led_20_G
+$Comp
+L Device:R R?
+U 1 1 6581671B
+P 15250 8050
+F 0 "R?" H 15320 8096 50  0000 L CNN
+F 1 "1K" H 15320 8005 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 15180 8050 50  0001 C CNN
+F 3 "~" H 15250 8050 50  0001 C CNN
+	1    15250 8050
+	-1   0    0    -1  
+$EndComp
+Text Label 15350 7900 0    50   ~ 0
+led_20_B
+Wire Wire Line
+	15350 7900 15650 7900
+Wire Wire Line
+	14950 7900 15250 7900
+Text Label 14950 7900 0    50   ~ 0
+led_20_R
+$Comp
+L Device:R R?
+U 1 1 65872C83
+P 14000 6900
+F 0 "R?" H 14070 6946 50  0000 L CNN
+F 1 "470R" H 14070 6855 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 13930 6900 50  0001 C CNN
+F 3 "~" H 14000 6900 50  0001 C CNN
+	1    14000 6900
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	12900 6750 13200 6750
+$Comp
+L Device:R R?
+U 1 1 65872C8A
+P 13200 6900
+F 0 "R?" H 13270 6946 50  0000 L CNN
+F 1 "1K" H 13270 6855 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 13130 6900 50  0001 C CNN
+F 3 "~" H 13200 6900 50  0001 C CNN
+	1    13200 6900
+	-1   0    0    -1  
+$EndComp
+Text Label 12900 6750 0    50   ~ 0
+led_12_G
+$Comp
+L Device:R R?
+U 1 1 65872C91
+P 13600 6900
+F 0 "R?" H 13670 6946 50  0000 L CNN
+F 1 "1K" H 13670 6855 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 13530 6900 50  0001 C CNN
+F 3 "~" H 13600 6900 50  0001 C CNN
+	1    13600 6900
+	-1   0    0    -1  
+$EndComp
+Text Label 13700 6750 0    50   ~ 0
+led_12_B
+Wire Wire Line
+	13700 6750 14000 6750
+Wire Wire Line
+	13300 6750 13600 6750
+Text Label 13300 6750 0    50   ~ 0
+led_12_R
+$Comp
+L Device:R R?
+U 1 1 658D03CE
+P 15650 6900
+F 0 "R?" H 15720 6946 50  0000 L CNN
+F 1 "470R" H 15720 6855 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 15580 6900 50  0001 C CNN
+F 3 "~" H 15650 6900 50  0001 C CNN
+	1    15650 6900
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	14550 6750 14850 6750
+$Comp
+L Device:R R?
+U 1 1 658D03D5
+P 14850 6900
+F 0 "R?" H 14920 6946 50  0000 L CNN
+F 1 "1K" H 14920 6855 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 14780 6900 50  0001 C CNN
+F 3 "~" H 14850 6900 50  0001 C CNN
+	1    14850 6900
+	-1   0    0    -1  
+$EndComp
+Text Label 14550 6750 0    50   ~ 0
+led_19_G
+$Comp
+L Device:R R?
+U 1 1 658D03DC
+P 15250 6900
+F 0 "R?" H 15320 6946 50  0000 L CNN
+F 1 "1K" H 15320 6855 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 15180 6900 50  0001 C CNN
+F 3 "~" H 15250 6900 50  0001 C CNN
+	1    15250 6900
+	-1   0    0    -1  
+$EndComp
+Text Label 15350 6750 0    50   ~ 0
+led_19_B
+Wire Wire Line
+	15350 6750 15650 6750
+Wire Wire Line
+	14950 6750 15250 6750
+Text Label 14950 6750 0    50   ~ 0
+led_19_R
+$Comp
+L Device:R R?
+U 1 1 6592E4C9
+P 14000 5750
+F 0 "R?" H 14070 5796 50  0000 L CNN
+F 1 "470R" H 14070 5705 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 13930 5750 50  0001 C CNN
+F 3 "~" H 14000 5750 50  0001 C CNN
+	1    14000 5750
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	12900 5600 13200 5600
+$Comp
+L Device:R R?
+U 1 1 6592E4D0
+P 13200 5750
+F 0 "R?" H 13270 5796 50  0000 L CNN
+F 1 "1K" H 13270 5705 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 13130 5750 50  0001 C CNN
+F 3 "~" H 13200 5750 50  0001 C CNN
+	1    13200 5750
+	-1   0    0    -1  
+$EndComp
+Text Label 12900 5600 0    50   ~ 0
+led_11_G
+$Comp
+L Device:R R?
+U 1 1 6592E4D7
+P 13600 5750
+F 0 "R?" H 13670 5796 50  0000 L CNN
+F 1 "1K" H 13670 5705 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 13530 5750 50  0001 C CNN
+F 3 "~" H 13600 5750 50  0001 C CNN
+	1    13600 5750
+	-1   0    0    -1  
+$EndComp
+Text Label 13700 5600 0    50   ~ 0
+led_11_B
+Wire Wire Line
+	13700 5600 14000 5600
+Wire Wire Line
+	13300 5600 13600 5600
+Text Label 13300 5600 0    50   ~ 0
+led_11_R
+$Comp
+L Device:R R?
+U 1 1 6598DDD0
+P 15650 5750
+F 0 "R?" H 15720 5796 50  0000 L CNN
+F 1 "470R" H 15720 5705 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 15580 5750 50  0001 C CNN
+F 3 "~" H 15650 5750 50  0001 C CNN
+	1    15650 5750
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	14550 5600 14850 5600
+$Comp
+L Device:R R?
+U 1 1 6598DDD7
+P 14850 5750
+F 0 "R?" H 14920 5796 50  0000 L CNN
+F 1 "1K" H 14920 5705 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 14780 5750 50  0001 C CNN
+F 3 "~" H 14850 5750 50  0001 C CNN
+	1    14850 5750
+	-1   0    0    -1  
+$EndComp
+Text Label 14550 5600 0    50   ~ 0
+led_18_G
+$Comp
+L Device:R R?
+U 1 1 6598DDDE
+P 15250 5750
+F 0 "R?" H 15320 5796 50  0000 L CNN
+F 1 "1K" H 15320 5705 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 15180 5750 50  0001 C CNN
+F 3 "~" H 15250 5750 50  0001 C CNN
+	1    15250 5750
+	-1   0    0    -1  
+$EndComp
+Text Label 15350 5600 0    50   ~ 0
+led_18_B
+Wire Wire Line
+	15350 5600 15650 5600
+Wire Wire Line
+	14950 5600 15250 5600
+Text Label 14950 5600 0    50   ~ 0
+led_18_R
+$Comp
+L Device:R R?
+U 1 1 659ED9D6
+P 14000 4600
+F 0 "R?" H 14070 4646 50  0000 L CNN
+F 1 "470R" H 14070 4555 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 13930 4600 50  0001 C CNN
+F 3 "~" H 14000 4600 50  0001 C CNN
+	1    14000 4600
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	12900 4450 13200 4450
+$Comp
+L Device:R R?
+U 1 1 659ED9DD
+P 13200 4600
+F 0 "R?" H 13270 4646 50  0000 L CNN
+F 1 "1K" H 13270 4555 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 13130 4600 50  0001 C CNN
+F 3 "~" H 13200 4600 50  0001 C CNN
+	1    13200 4600
+	-1   0    0    -1  
+$EndComp
+Text Label 12900 4450 0    50   ~ 0
+led_10_G
+$Comp
+L Device:R R?
+U 1 1 659ED9E4
+P 13600 4600
+F 0 "R?" H 13670 4646 50  0000 L CNN
+F 1 "1K" H 13670 4555 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 13530 4600 50  0001 C CNN
+F 3 "~" H 13600 4600 50  0001 C CNN
+	1    13600 4600
+	-1   0    0    -1  
+$EndComp
+Text Label 13700 4450 0    50   ~ 0
+led_10_B
+Wire Wire Line
+	13700 4450 14000 4450
+Wire Wire Line
+	13300 4450 13600 4450
+Text Label 13300 4450 0    50   ~ 0
+led_10_R
+$Comp
+L Device:R R?
+U 1 1 65A4E4C1
+P 15650 4600
+F 0 "R?" H 15720 4646 50  0000 L CNN
+F 1 "470R" H 15720 4555 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 15580 4600 50  0001 C CNN
+F 3 "~" H 15650 4600 50  0001 C CNN
+	1    15650 4600
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	14550 4450 14850 4450
+$Comp
+L Device:R R?
+U 1 1 65A4E4C8
+P 14850 4600
+F 0 "R?" H 14920 4646 50  0000 L CNN
+F 1 "1K" H 14920 4555 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 14780 4600 50  0001 C CNN
+F 3 "~" H 14850 4600 50  0001 C CNN
+	1    14850 4600
+	-1   0    0    -1  
+$EndComp
+Text Label 14550 4450 0    50   ~ 0
+led_17_G
+$Comp
+L Device:R R?
+U 1 1 65A4E4CF
+P 15250 4600
+F 0 "R?" H 15320 4646 50  0000 L CNN
+F 1 "1K" H 15320 4555 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 15180 4600 50  0001 C CNN
+F 3 "~" H 15250 4600 50  0001 C CNN
+	1    15250 4600
+	-1   0    0    -1  
+$EndComp
+Text Label 15350 4450 0    50   ~ 0
+led_17_B
+Wire Wire Line
+	15350 4450 15650 4450
+Wire Wire Line
+	14950 4450 15250 4450
+Text Label 14950 4450 0    50   ~ 0
+led_17_R
+$Comp
+L Device:R R?
+U 1 1 65AAFCC0
+P 14000 3450
+F 0 "R?" H 14070 3496 50  0000 L CNN
+F 1 "470R" H 14070 3405 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 13930 3450 50  0001 C CNN
+F 3 "~" H 14000 3450 50  0001 C CNN
+	1    14000 3450
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	12900 3300 13200 3300
+$Comp
+L Device:R R?
+U 1 1 65AAFCC7
+P 13200 3450
+F 0 "R?" H 13270 3496 50  0000 L CNN
+F 1 "1K" H 13270 3405 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 13130 3450 50  0001 C CNN
+F 3 "~" H 13200 3450 50  0001 C CNN
+	1    13200 3450
+	-1   0    0    -1  
+$EndComp
+Text Label 12900 3300 0    50   ~ 0
+led_9_G
+$Comp
+L Device:R R?
+U 1 1 65AAFCCE
+P 13600 3450
+F 0 "R?" H 13670 3496 50  0000 L CNN
+F 1 "1K" H 13670 3405 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 13530 3450 50  0001 C CNN
+F 3 "~" H 13600 3450 50  0001 C CNN
+	1    13600 3450
+	-1   0    0    -1  
+$EndComp
+Text Label 13700 3300 0    50   ~ 0
+led_9_B
+Wire Wire Line
+	13700 3300 14000 3300
+Wire Wire Line
+	13300 3300 13600 3300
+Text Label 13300 3300 0    50   ~ 0
+led_9_R
+$Comp
+L Device:R R?
+U 1 1 65B12481
+P 15650 3450
+F 0 "R?" H 15720 3496 50  0000 L CNN
+F 1 "470R" H 15720 3405 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 15580 3450 50  0001 C CNN
+F 3 "~" H 15650 3450 50  0001 C CNN
+	1    15650 3450
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	14550 3300 14850 3300
+$Comp
+L Device:R R?
+U 1 1 65B12488
+P 14850 3450
+F 0 "R?" H 14920 3496 50  0000 L CNN
+F 1 "1K" H 14920 3405 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 14780 3450 50  0001 C CNN
+F 3 "~" H 14850 3450 50  0001 C CNN
+	1    14850 3450
+	-1   0    0    -1  
+$EndComp
+Text Label 14550 3300 0    50   ~ 0
+led_16_G
+$Comp
+L Device:R R?
+U 1 1 65B1248F
+P 15250 3450
+F 0 "R?" H 15320 3496 50  0000 L CNN
+F 1 "1K" H 15320 3405 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 15180 3450 50  0001 C CNN
+F 3 "~" H 15250 3450 50  0001 C CNN
+	1    15250 3450
+	-1   0    0    -1  
+$EndComp
+Text Label 15350 3300 0    50   ~ 0
+led_16_B
+Wire Wire Line
+	15350 3300 15650 3300
+Wire Wire Line
+	14950 3300 15250 3300
+Text Label 14950 3300 0    50   ~ 0
+led_16_R
+$Comp
+L Device:R R?
+U 1 1 65B757D9
+P 14000 2300
+F 0 "R?" H 14070 2346 50  0000 L CNN
+F 1 "470R" H 14070 2255 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 13930 2300 50  0001 C CNN
+F 3 "~" H 14000 2300 50  0001 C CNN
+	1    14000 2300
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	12900 2150 13200 2150
+$Comp
+L Device:R R?
+U 1 1 65B757E0
+P 13200 2300
+F 0 "R?" H 13270 2346 50  0000 L CNN
+F 1 "1K" H 13270 2255 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 13130 2300 50  0001 C CNN
+F 3 "~" H 13200 2300 50  0001 C CNN
+	1    13200 2300
+	-1   0    0    -1  
+$EndComp
+Text Label 12900 2150 0    50   ~ 0
+led_8_G
+$Comp
+L Device:R R?
+U 1 1 65B757E7
+P 13600 2300
+F 0 "R?" H 13670 2346 50  0000 L CNN
+F 1 "1K" H 13670 2255 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 13530 2300 50  0001 C CNN
+F 3 "~" H 13600 2300 50  0001 C CNN
+	1    13600 2300
+	-1   0    0    -1  
+$EndComp
+Text Label 13700 2150 0    50   ~ 0
+led_8_B
+Wire Wire Line
+	13700 2150 14000 2150
+Wire Wire Line
+	13300 2150 13600 2150
+Text Label 13300 2150 0    50   ~ 0
+led_8_R
+$Comp
+L Device:R R?
+U 1 1 65BD9880
+P 15650 2300
+F 0 "R?" H 15720 2346 50  0000 L CNN
+F 1 "470R" H 15720 2255 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 15580 2300 50  0001 C CNN
+F 3 "~" H 15650 2300 50  0001 C CNN
+	1    15650 2300
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	14550 2150 14850 2150
+$Comp
+L Device:R R?
+U 1 1 65BD9887
+P 14850 2300
+F 0 "R?" H 14920 2346 50  0000 L CNN
+F 1 "1K" H 14920 2255 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 14780 2300 50  0001 C CNN
+F 3 "~" H 14850 2300 50  0001 C CNN
+	1    14850 2300
+	-1   0    0    -1  
+$EndComp
+Text Label 14550 2150 0    50   ~ 0
+led_15_G
+$Comp
+L Device:R R?
+U 1 1 65BD988E
+P 15250 2300
+F 0 "R?" H 15320 2346 50  0000 L CNN
+F 1 "1K" H 15320 2255 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 15180 2300 50  0001 C CNN
+F 3 "~" H 15250 2300 50  0001 C CNN
+	1    15250 2300
+	-1   0    0    -1  
+$EndComp
+Text Label 15350 2150 0    50   ~ 0
+led_15_B
+Wire Wire Line
+	15350 2150 15650 2150
+Wire Wire Line
+	14950 2150 15250 2150
+Text Label 14950 2150 0    50   ~ 0
+led_15_R
+Text Label 12050 2150 0    50   ~ 0
+led_1_B
+Text Label 11650 2150 0    50   ~ 0
+led_1_R
 $EndSCHEMATC
