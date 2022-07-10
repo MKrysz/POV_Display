@@ -21,11 +21,8 @@
 #define LED_CLEAR_GPIO_Port NOT_CLEAR_GPIO_Port
 #define LED_CLEAR_Pin NOT_CLEAR_Pin
 
-typedef struct LED_CompiledData{
-    uint8_t data[NR_OF_COLS][LED_BUFFER_SIZE];
-} LED_CompiledData_t;
 
-void LED_Send(uint8_t* col);
+void LED_Send(const uint8_t* col);
 void LED_AllBlack();
 void LED_AllWhite();
 void LED_Init();

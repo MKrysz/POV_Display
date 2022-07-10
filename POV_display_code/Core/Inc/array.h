@@ -4,8 +4,8 @@
 #include "stdint.h"
 #include "stdlib.h"
 
-void ARRAY_BitwiseOR(uint8_t *x, uint8_t *y, uint8_t *result, size_t lenght);
-void ARRAY_Copy(uint8_t *src, uint8_t *dest, size_t lenght);
+void ARRAY_BitwiseOR(const uint8_t *x, const uint8_t *y, uint8_t *result, size_t lenght);
+void ARRAY_Copy(const uint8_t *src, uint8_t *dest, size_t lenght);
 void ARRAY_Fill(uint8_t *arr, uint8_t value, size_t lenght);
 void ARRAY_Clear(uint8_t *arr, size_t lenght);
 

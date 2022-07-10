@@ -54,27 +54,26 @@ extern "C" {
 void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
-
+void sleepRoutine();
+void wakeUpRoutine();
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define BAT_IN_Pin GPIO_PIN_0
+#define FDBK_Pin GPIO_PIN_13
+#define FDBK_GPIO_Port GPIOC
+#define FDBK_EXTI_IRQn EXTI4_15_IRQn
+#define BAT_EN_Pin GPIO_PIN_2
+#define BAT_EN_GPIO_Port GPIOA
+#define BAT_IN_Pin GPIO_PIN_3
 #define BAT_IN_GPIO_Port GPIOA
-#define IR_SIG_Pin GPIO_PIN_2
-#define IR_SIG_GPIO_Port GPIOA
-#define DBG_Pin GPIO_PIN_3
-#define DBG_GPIO_Port GPIOA
 #define RCLK_Pin GPIO_PIN_14
 #define RCLK_GPIO_Port GPIOB
 #define NOT_OE_Pin GPIO_PIN_11
 #define NOT_OE_GPIO_Port GPIOA
 #define NOT_CLEAR_Pin GPIO_PIN_12
 #define NOT_CLEAR_GPIO_Port GPIOA
-#define HAL_SIG_Pin GPIO_PIN_5
-#define HAL_SIG_GPIO_Port GPIOB
-#define HAL_SIG_EXTI_IRQn EXTI4_15_IRQn
-#define BAT_EN_Pin GPIO_PIN_9
-#define BAT_EN_GPIO_Port GPIOB
+#define USB_FLAG_Pin GPIO_PIN_9
+#define USB_FLAG_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

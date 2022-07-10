@@ -57,6 +57,29 @@ void MX_RTC_Init(void)
 
   /* USER CODE BEGIN Check_RTC_BKUP */
 
+  //set my time
+  sTime.Hours = 0x11;
+  sTime.Minutes = 0x09;
+  sTime.Seconds = 0x00;
+  sTime.TimeFormat = RTC_HOURFORMAT12_PM;
+  sTime.DayLightSaving = RTC_DAYLIGHTSAVING_NONE;
+  sTime.StoreOperation = RTC_STOREOPERATION_RESET;
+  if (HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BCD) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sDate.WeekDay = RTC_WEEKDAY_WEDNESDAY;
+  sDate.Month = RTC_MONTH_MAY;
+  sDate.Date = 0x25;
+  sDate.Year = 0x22;
+
+  if (HAL_RTC_SetDate(&hrtc, &sDate, RTC_FORMAT_BCD) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  return;
+
   /* USER CODE END Check_RTC_BKUP */
 
   /** Initialize RTC and set the Time and Date

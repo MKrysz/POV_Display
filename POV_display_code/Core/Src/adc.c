@@ -43,7 +43,7 @@ void MX_ADC_Init(void)
   */
   hadc.Instance = ADC1;
   hadc.Init.OversamplingMode = DISABLE;
-  hadc.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV1;
+  hadc.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV2;
   hadc.Init.Resolution = ADC_RESOLUTION_12B;
   hadc.Init.SamplingTime = ADC_SAMPLETIME_1CYCLE_5;
   hadc.Init.ScanConvMode = ADC_SCAN_DIRECTION_FORWARD;
@@ -64,7 +64,7 @@ void MX_ADC_Init(void)
   }
   /** Configure for the selected ADC regular channel to be converted.
   */
-  sConfig.Channel = ADC_CHANNEL_0;
+  sConfig.Channel = ADC_CHANNEL_3;
   sConfig.Rank = ADC_RANK_CHANNEL_NUMBER;
   if (HAL_ADC_ConfigChannel(&hadc, &sConfig) != HAL_OK)
   {
@@ -90,7 +90,7 @@ void HAL_ADC_MspInit(ADC_HandleTypeDef* adcHandle)
 
     __HAL_RCC_GPIOA_CLK_ENABLE();
     /**ADC GPIO Configuration
-    PA0     ------> ADC_IN0
+    PA3     ------> ADC_IN3
     */
     GPIO_InitStruct.Pin = BAT_IN_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
@@ -115,7 +115,7 @@ void HAL_ADC_MspDeInit(ADC_HandleTypeDef* adcHandle)
     __HAL_RCC_ADC1_CLK_DISABLE();
 
     /**ADC GPIO Configuration
-    PA0     ------> ADC_IN0
+    PA3     ------> ADC_IN3
     */
     HAL_GPIO_DeInit(BAT_IN_GPIO_Port, BAT_IN_Pin);
 

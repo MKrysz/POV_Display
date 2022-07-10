@@ -1,7 +1,7 @@
 
 #include "led.h"
 
-void LED_Send(uint8_t* col)
+void LED_Send(const uint8_t* col)
 {
     HAL_SPI_Transmit(&LED_HSPI, col, 8, HAL_MAX_DELAY);
     HAL_GPIO_WritePin(LED_RCLK_GPIO_Port, LED_RCLK_Pin, 1);

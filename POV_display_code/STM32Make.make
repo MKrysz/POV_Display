@@ -48,6 +48,7 @@ Core/Src/stm32l0xx_hal_msp.c \
 Core/Src/stm32l0xx_it.c \
 Core/Src/system_stm32l0xx.c \
 Core/Src/tim.c \
+Core/Src/usart.c \
 Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal.c \
 Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_adc.c \
 Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_adc_ex.c \
@@ -68,7 +69,9 @@ Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rtc.c \
 Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rtc_ex.c \
 Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_spi.c \
 Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_tim.c \
-Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_tim_ex.c
+Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_tim_ex.c \
+Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_uart.c \
+Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_uart_ex.c
 
 
 CPP_SOURCES = \
@@ -156,7 +159,8 @@ CFLAGS = $(MCU) $(C_DEFS) $(C_INCLUDES) $(OPT) -Wall -fdata-sections -ffunction-
 CXXFLAGS = $(MCU) $(CXX_DEFS) $(C_INCLUDES) $(OPT) -Wall -fdata-sections -ffunction-sections -feliminate-unused-debug-types
 
 ifeq ($(DEBUG), 1)
-CFLAGS += -g -gdwarf-2
+CFLAGS += -g -gdwarf -ggdb
+CXXFLAGS += -g -gdwarf -ggdb
 endif
 
 # Add additional flags
@@ -244,6 +248,12 @@ erase: $(BUILD_DIR)/$(TARGET).elf
 #######################################
 clean:
 	cmd /c rd /s /q $(BUILD_DIR)
+
+#######################################
+# custom makefile rules
+#######################################
+
+
 	
 #######################################
 # dependencies

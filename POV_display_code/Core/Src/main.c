@@ -24,14 +24,17 @@
 #include "rtc.h"
 #include "spi.h"
 #include "tim.h"
+#include "usart.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "led.h"
 #include "clk.h"
+#include "img.h"
 #include "array.h"
 #include <stdbool.h>
+#include "config.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -41,9 +44,6 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-// #define MODE_IMAGE
-#define MODE_ANALOG_CLOCK
-// #define MODE_DIGITAL_CLOCK
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -66,17 +66,15 @@ volatile uint16_t period = 0;
  */
 volatile uint16_t periodUS = 0;
 
-
+extern volatile bool GPIO_Flag;
 volatile size_t imgIdx = 0;
-
-#include "img.h"
+volatile bool isShutDown = false;
 
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
-void sleepRoutine();
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -115,10 +113,8 @@ int main(void)
   MX_SPI2_Init();
   MX_RTC_Init();
   MX_DMA_Init();
-  MX_TIM6_Init();
-  MX_TIM21_Init();
-  MX_TIM22_Init();
   MX_TIM2_Init();
+  MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
   TIM_Init();
   GPIO_Init();
@@ -128,7 +124,21 @@ int main(void)
   LED_AllWhite();
   HAL_Delay(1500);
   LED_AllBlack();
-  HAL_Delay(2000);
+  while(1);
+  
+  uint16_t prev_millis = 0;
+  #ifdef MODE_IMAGE
+    const size_t imgIdxMax = IMG_SIZE;
+    for (size_t i = 0; i < imgIdxMax; i++)
+    {
+      LED_Send(image[i]);
+      HAL_Delay(2000/imgIdxMax);
+    }
+    
+  #endif
+  #ifdef MODE_ANALOG_CLOCK
+    const size_t imgIdxMax = 120;
+  #endif
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -142,81 +152,59 @@ int main(void)
 
   while (1)
   {
-
-    while(1)
-    {
-
-
-      #ifdef MODE_IMAGE
-
-      const size_t imgIdxMax = IMG_SIZE;
-      LED_Send(image[imgIdxMax-imgIdx-1]);
-
-      #endif
-
-
-      #ifdef MODE_ANALOG_CLOCK
-
-      const size_t imgIdxMax = 120;
-      uint8_t sendData[8];
-      size_t tempIdx = imgIdx;         
-      // size_t tempIdx = (imgIdx + imgIdxMax/2) % imgIdxMax;
-
-      //add background
-      ARRAY_Copy(CLK_BKGD[tempIdx], sendData, 8);
-
-      // //add hands
-      // RTC_TimeTypeDef currentTime; 
-      // // HAL_RTC_GetTime(&hrtc, &currentTime, RTC_FORMAT_BIN);
-      // currentTime.Hours = 3;
-      // currentTime.Minutes = 30;
-      // currentTime.Seconds = 45;
-
-      // if(currentTime.Hours * 10 == tempIdx)
-      //   ARRAY_BitwiseOR(sendData, hours, sendData, 8);
-      // if(currentTime.Minutes * 2 == tempIdx)
-      //   ARRAY_BitwiseOR(sendData, minutes, sendData, 8);
-      // if(currentTime.Seconds * 2 == tempIdx)
-      //   ARRAY_BitwiseOR(sendData, seconds, sendData, 8);
-
-      LED_Send(sendData);
-
-      #endif
-
-      //progress in showing img
-      imgIdx++;
-      if(imgIdx == imgIdxMax){
-        imgIdx = 0;
-      }
-
-      while(__HAL_TIM_GET_COUNTER(&HTIM_US_DELAY) < (uint16_t)(periodUS/imgIdxMax));
-    __HAL_TIM_SET_COUNTER(&HTIM_US_DELAY, 0);
-
-      // //calculate and execute delay
-      // uint32_t delayDurationUS = (period * 1000) / imgIdxMax;
-      // if(delayDurationUS > 60000){
-      // //   while(__HAL_TIM_GET_COUNTER(&HTIM_MS_DELAY) < (uint16_t)(period/imgIdxMax));
-      // // __HAL_TIM_SET_COUNTER(&HTIM_MS_DELAY, 0);
-      // }
-      // else{
-      //   if(period > 60){
-      //   //   while(__HAL_TIM_GET_COUNTER(&HTIM_US_DELAY) < (uint16_t)(delayDurationUS));
-      //   // __HAL_TIM_SET_COUNTER(&HTIM_US_DELAY, 0);
-      //   }
-      //   else{
-      //     while(__HAL_TIM_GET_COUNTER(&HTIM_US_DELAY) < (uint16_t)(periodUS/imgIdxMax));
-      //   __HAL_TIM_SET_COUNTER(&HTIM_US_DELAY, 0);
-      //   }
-      // }
-
-
-      //shutdown if no rotation detected for specified time
-      if(__HAL_TIM_GET_COUNTER(&HTIM_MS_GET) >= shutdownTime){
-        sleepRoutine();
-      }
-
+    #if SHUTDOWN_ENABLE
+    if(imgIdx > 3*imgIdxMax){
+      sleepRoutine();
     }
+    #endif
 
+    #ifdef MODE_IMAGE
+
+    LED_Send(image[imgIdx%imgIdxMax]);
+
+    #endif
+
+
+    #ifdef MODE_ANALOG_CLOCK
+    uint8_t sendData[8];
+    // size_t tempIdx = imgIdx;         
+    size_t tempIdx = (imgIdx -2 + imgIdxMax/2) % imgIdxMax;
+
+    //add background
+    ARRAY_Copy(CLK_BKGD[tempIdx], sendData, 8);
+
+    // //add hands
+    RTC_TimeTypeDef currentTime; 
+    RTC_DateTypeDef currentDate; 
+    HAL_RTC_GetTime(&hrtc, &currentTime, RTC_FORMAT_BIN);
+    HAL_RTC_GetDate(&hrtc, &currentDate, RTC_FORMAT_BIN);
+
+    if(currentTime.Hours * 10 == tempIdx)
+      ARRAY_BitwiseOR(sendData, hours, sendData, 8);
+    if(currentTime.Minutes * 2 == tempIdx)
+      ARRAY_BitwiseOR(sendData, minutes, sendData, 8);
+    if(currentTime.Seconds * 2 == tempIdx)
+      ARRAY_BitwiseOR(sendData, seconds, sendData, 8);
+
+    LED_Send(sendData);
+
+    #endif
+
+    //progress in showing img
+    imgIdx++;
+
+    //delay routine
+    while(true){
+      //us delay from us period
+      if(__HAL_TIM_GET_COUNTER(&HTIM_US_GET) - prev_millis >= (uint16_t)(periodUS/imgIdxMax))
+        break;
+      if(GPIO_Flag){
+        //if anchor point detected stop waiting and show another column
+        GPIO_Flag = false;
+        break;
+      }
+    }
+    prev_millis = __HAL_TIM_GET_COUNTER(&HTIM_US_GET);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -248,7 +236,10 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.LSEState = RCC_LSE_ON;
   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
-  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
+  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
+  RCC_OscInitStruct.PLL.PLLMUL = RCC_PLLMUL_4;
+  RCC_OscInitStruct.PLL.PLLDIV = RCC_PLLDIV_2;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
     Error_Handler();
@@ -257,16 +248,17 @@ void SystemClock_Config(void)
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
-  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
+  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
 
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0) != HAL_OK)
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_1) != HAL_OK)
   {
     Error_Handler();
   }
-  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_RTC;
+  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_USART1|RCC_PERIPHCLK_RTC;
+  PeriphClkInit.Usart1ClockSelection = RCC_USART1CLKSOURCE_PCLK2;
   PeriphClkInit.RTCClockSelection = RCC_RTCCLKSOURCE_LSE;
   if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
   {
@@ -278,9 +270,19 @@ void SystemClock_Config(void)
 void sleepRoutine()
 {
   LED_AllBlack();
+  periodUS = 0;
+  isShutDown = true;
   
   HAL_SuspendTick();
   HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON, PWR_STOPENTRY_WFI);
+}
+
+
+void wakeUpRoutine()
+{
+  isShutDown = false;
+  SystemClock_Config();
+  HAL_ResumeTick();
 }
 
 /* USER CODE END 4 */

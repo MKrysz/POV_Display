@@ -25,6 +25,8 @@
 #include "tim.h"
 #include "led.h"
 #include "array.h"
+#include "main.h"
+#include "config.h"
 /* USER CODE END 0 */
 
 /*----------------------------------------------------------------------------*/
@@ -35,9 +37,11 @@
 extern volatile uint16_t period;
 extern volatile uint16_t periodUS;
 extern volatile size_t imgIdx;
+extern volatile bool isShutDown;
 
 /*variables*/
 
+volatile bool GPIO_Flag = false;
 /* USER CODE END 1 */
 
 /** Configure pins as
@@ -58,36 +62,36 @@ void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, DBG_Pin|NOT_OE_Pin|NOT_CLEAR_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, BAT_EN_Pin|NOT_OE_Pin|NOT_CLEAR_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, RCLK_Pin|BAT_EN_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(RCLK_GPIO_Port, RCLK_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin : PtPin */
-  GPIO_InitStruct.Pin = IR_SIG_Pin;
+  GPIO_InitStruct.Pin = FDBK_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(IR_SIG_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(FDBK_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : PAPin PAPin PAPin */
-  GPIO_InitStruct.Pin = DBG_Pin|NOT_OE_Pin|NOT_CLEAR_Pin;
+  GPIO_InitStruct.Pin = BAT_EN_Pin|NOT_OE_Pin|NOT_CLEAR_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : PBPin PBPin */
-  GPIO_InitStruct.Pin = RCLK_Pin|BAT_EN_Pin;
+  /*Configure GPIO pin : PtPin */
+  GPIO_InitStruct.Pin = RCLK_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+  HAL_GPIO_Init(RCLK_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : PtPin */
-  GPIO_InitStruct.Pin = HAL_SIG_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pin = USB_FLAG_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(HAL_SIG_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(USB_FLAG_GPIO_Port, &GPIO_InitStruct);
 
   /* EXTI interrupt init*/
   HAL_NVIC_SetPriority(EXTI4_15_IRQn, 0, 0);
@@ -101,30 +105,17 @@ void GPIO_Init(){
 }
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
-
-  //measure time
-  // uint16_t timeUS = __HAL_TIM_GET_COUNTER(&HTIM_US_GET);
-  // __HAL_TIM_SET_COUNTER(&HTIM_US_GET,0);
-  // uint16_t time = __HAL_TIM_GET_COUNTER(&HTIM_MS_GET);
-  // __HAL_TIM_SET_COUNTER(&HTIM_MS_GET, 0);
-
-  // period = time;
-  // periodUS = timeUS;
+  GPIO_Flag = true;
+  #if SHUTDOWN_ENABLE
+  if(isShutDown)
+    wakeUpRoutine();
+  #endif
 
   periodUS = __HAL_TIM_GET_COUNTER(&HTIM_US_GET);
   __HAL_TIM_SET_COUNTER(&HTIM_US_GET,0);
-  period = __HAL_TIM_GET_COUNTER(&HTIM_MS_GET);
-  __HAL_TIM_SET_COUNTER(&HTIM_MS_GET, 0);
 
-  // //anchor the image
-  // if(i%15 == 0)
-  // imgIdx = 0;
-  // __HAL_TIM_SET_COUNTER(&HTIM_MS_DELAY, 0);
-  // __HAL_TIM_SET_COUNTER(&HTIM_US_DELAY, 0);
-
-
-
-
+  // anchor the image
+  imgIdx = 0;
 }
 /* USER CODE END 2 */
 
