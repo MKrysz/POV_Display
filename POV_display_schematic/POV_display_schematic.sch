@@ -2871,28 +2871,6 @@ F 3 "~" H 650 4750 50  0001 C CNN
 	1    650  4750
 	-1   0    0    1   
 $EndComp
-$Comp
-L Device:LED D2
-U 1 1 63709874
-P 900 4200
-F 0 "D2" H 1050 4250 50  0000 R CNN
-F 1 "Red" H 800 4250 50  0000 R CNN
-F 2 "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 900 4200 50  0001 C CNN
-F 3 "~" H 900 4200 50  0001 C CNN
-	1    900  4200
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:LED D1
-U 1 1 6370B345
-P 650 4200
-F 0 "D1" H 800 4250 50  0000 R CNN
-F 1 "Green" H 550 4250 50  0000 R CNN
-F 2 "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 650 4200 50  0001 C CNN
-F 3 "~" H 650 4200 50  0001 C CNN
-	1    650  4200
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	900  4900 900  5050
 Wire Wire Line
@@ -4279,4 +4257,26 @@ Text Label 12050 2150 0    50   ~ 0
 led_1_B
 Text Label 11650 2150 0    50   ~ 0
 led_1_R
+$Comp
+L Device:LED D1
+U 1 1 6370B345
+P 650 4200
+F 0 "D1" H 800 4250 50  0000 R CNN
+F 1 "Red" H 550 4250 50  0000 R CNN
+F 2 "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 650 4200 50  0001 C CNN
+F 3 "~" H 650 4200 50  0001 C CNN
+	1    650  4200
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:LED D2
+U 1 1 63709874
+P 900 4200
+F 0 "D2" H 1050 4250 50  0000 R CNN
+F 1 "Green" H 800 4250 50  0000 R CNN
+F 2 "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 900 4200 50  0001 C CNN
+F 3 "~" H 900 4200 50  0001 C CNN
+	1    900  4200
+	0    -1   -1   0   
+$EndComp
 $EndSCHEMATC

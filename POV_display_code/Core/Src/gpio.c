@@ -110,6 +110,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
   if(isShutDown)
     wakeUpRoutine();
   #endif
+  
 
   periodUS = __HAL_TIM_GET_COUNTER(&HTIM_US_GET);
   __HAL_TIM_SET_COUNTER(&HTIM_US_GET,0);

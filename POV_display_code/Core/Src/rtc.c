@@ -58,8 +58,8 @@ void MX_RTC_Init(void)
   /* USER CODE BEGIN Check_RTC_BKUP */
 
   //set my time
-  sTime.Hours = 0x11;
-  sTime.Minutes = 0x09;
+  sTime.Hours = 0x08;
+  sTime.Minutes = 0x30;
   sTime.Seconds = 0x00;
   sTime.TimeFormat = RTC_HOURFORMAT12_PM;
   sTime.DayLightSaving = RTC_DAYLIGHTSAVING_NONE;

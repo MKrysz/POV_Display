@@ -122,9 +122,9 @@ int main(void)
   LED_AllBlack();
   HAL_Delay(1500);
   LED_AllWhite();
+  // while(1);
   HAL_Delay(1500);
   LED_AllBlack();
-  while(1);
   
   uint16_t prev_millis = 0;
   #ifdef MODE_IMAGE
@@ -160,7 +160,8 @@ int main(void)
 
     #ifdef MODE_IMAGE
 
-    LED_Send(image[imgIdx%imgIdxMax]);
+    // LED_Send(image[(imgIdx+imgIdxMax*3/4)%imgIdxMax]);
+    LED_Send(image[(imgIdx)%imgIdxMax]);
 
     #endif
 
@@ -168,7 +169,7 @@ int main(void)
     #ifdef MODE_ANALOG_CLOCK
     uint8_t sendData[8];
     // size_t tempIdx = imgIdx;         
-    size_t tempIdx = (imgIdx -2 + imgIdxMax/2) % imgIdxMax;
+    size_t tempIdx = (imgIdx + 3 + imgIdxMax/2) % imgIdxMax;
 
     //add background
     ARRAY_Copy(CLK_BKGD[tempIdx], sendData, 8);
@@ -196,7 +197,8 @@ int main(void)
     //delay routine
     while(true){
       //us delay from us period
-      if(__HAL_TIM_GET_COUNTER(&HTIM_US_GET) - prev_millis >= (uint16_t)(periodUS/imgIdxMax))
+      // if(__HAL_TIM_GET_COUNTER(&HTIM_US_GET) - prev_millis >= (uint16_t)(periodUS/(imgIdxMax+1)))
+      if(__HAL_TIM_GET_COUNTER(&HTIM_US_GET) - prev_millis >= (uint16_t)(periodUS/(imgIdxMax)))
         break;
       if(GPIO_Flag){
         //if anchor point detected stop waiting and show another column

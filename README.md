@@ -1,35 +1,52 @@
 
 # PERSISTANCE OF VISION DISPLAY
 
-## PRINCIPLE
+## Principle
 
 The working principle of persistance of vision display is that human eye cannot process more than 12 images per second. So by turning on and off moving LEDs it is possible to create an illusion of a stationary image.
 
-## ELECTRONICS
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/nO5H2S38heM/0.jpg)](https://www.youtube.com/watch?v=nO5H2S38heM)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/prxCtZcyvlo/0.jpg)](https://www.youtube.com/watch?v=prxCtZcyvlo)
 
-As the main purpose of this display is to have a fancy wall clock, one of the main concerns in electronics design was power usage. That's why I decided to use STM32L051C8 as the main MCU, due to its low power usage, high computational capabilities and my familiarity with STM's HAL interface. For driving LEDs i choose a combination of classical 74HC595 8-bit SIPO registers and current limiting resistors. For a position sensor I used a low power Hall sensor **which I had problems with, described below**.
+## Electronics
+
+As the main purpose of this display is to have a fancy wall clock, one of the main concerns in electronics design was power usage. That's why I decided to use STM32L051C8 as the main MCU, due to its low power usage, high computational capabilities and my familiarity with STM's HAL interface. Power supply consists of Li-Po battery and 2.5V low dropout voltage regulator. Charging battery is done via micro-USB port with TP4056 IC. For driving LEDs I chose a combination of classical 74HC595 8-bit SIPO registers and current limiting resistors. Photodiode is used for calculating rotation time.
 
 Using the KiCad software I came up with following schematic:
-![Schematic](POV_display_readme\SCH_IMG.jpg)
+![Schematic](POV_display_readme\schematic.svg)
 
 And PCB design:
-![PCB](POV_display_readme\PCB_IMG.jpg)
+![PCB](POV_display_readme/PCB.jpg)
 
-After everything was soldered in, I began writing software and I couldn't get reliable data from used Hall sensor, so I was forced to change it to a combination of phototransistor with schmitt inverter trigger on propellers side and IR diode on motors side.
+Board after assembling:
+![Assembled Front](POV_display_readme/AssembledFront.jpg)
+![Assembled Back](POV_display_readme/AssembledBack.jpg)
+
+After I glued the main battery in the board wasn't balanced and after trying few methods, I stuck with adding 2nd battery for increased battery life in addition to balancing the PCB.
 
 ## MECHANICS
 
-TODO:KAROL
+Rotor holder used for connecting the PCB to rotor using two pairs of M3 nuts and bolts.
+![Rotor holder](POV_display_readme/RotorHolder.png)
+
+Motor hodler was printed in 3 separate part because my 3D printer was too small. Parts are mounted together using M3 and M4 nuts and bolts. Motor holder also embeds IR LED.
+![Motor holder part1](POV_display_readme/MotorHolder1.png)
+![Motor holder part2](POV_display_readme/MotorHolder2.png)
+![Motor holder part3](POV_display_readme/MotorHolder3.png)
+
+All parts were printed with ABS material.
 
 ## SOFTWARE
 
 ### IMAGE COMPILER
 
-Python script used for compiling png images to a C-style array, that could be programmed into the MCU.
+Python script used for coverting images into a C-style array, that could be programmed into the MCU.
 
-### FIRMWARE
+### Embedded
 
-Written in C using STMs CubeMx with HAL library in VSCode using Makefile toolchain. It's based around 2 independent timers, one responsible for measuring period of full rotation, the other responsible for ensuring proper timing in changing LEDs colors.
+Project was made in VSCode using [stm32-for-vscode](https://www.st.com/en/development-tools/stm32cubemx.html) extension. For this project I used [stm32CubeMX](https://github.com/bmd-studio/stm32-for-vscode) for generating initialization. There are 2 main modes that the display can work in:
 
-## END RESULT
+- Analog Clock - Mimics classical analog clock
+- Image - Displays stationary images, precompiled with python script
 
+Modes and parameters can be chosen via *config.h* file.
