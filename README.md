@@ -13,7 +13,7 @@ The working principle of persistance of vision display is that human eye cannot 
 As the main purpose of this display is to have a fancy wall clock, one of the main concerns in electronics design was power usage. That's why I decided to use STM32L051C8 as the main MCU, due to its low power usage, high computational capabilities and my familiarity with STM's HAL interface. Power supply consists of Li-Po battery and 2.5V low dropout voltage regulator. Charging battery is done via micro-USB port with TP4056 IC. For driving LEDs I chose a combination of classical 74HC595 8-bit SIPO registers and current limiting resistors. Photodiode is used for calculating rotation time.
 
 Using the KiCad software I came up with following schematic:
-![Schematic](POV_display_readme\schematic.svg)
+![Schematic](POV_display_readme/schematic.svg)
 
 And PCB design:
 ![PCB](POV_display_readme/PCB.jpg)
