@@ -1,12 +1,12 @@
 
-# PERSISTANCE OF VISION DISPLAY
+# Persistance Of Vision Display
 
-## Principle
+## About
 
-The working principle of persistance of vision display is that human eye cannot process more than 12 images per second. So by turning on and off moving LEDs it is possible to create an illusion of a stationary image.
+Human eye cannot process more than 12 images per second. So by turning on and off moving LEDs it is possible to create an illusion of a stationary image. The goal of this project is to develop a display utilizing this principle. Main modes of the display are going to be: analog and digital clock, showing images and playing videos.
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/nO5H2S38heM/0.jpg)](https://www.youtube.com/watch?v=nO5H2S38heM)
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/prxCtZcyvlo/0.jpg)](https://www.youtube.com/watch?v=prxCtZcyvlo)
+[![hello world](https://img.youtube.com/vi/nO5H2S38heM/0.jpg)](https://www.youtube.com/watch?v=nO5H2S38heM)
+[![analog clock](https://img.youtube.com/vi/prxCtZcyvlo/0.jpg)](https://www.youtube.com/watch?v=prxCtZcyvlo)
 
 ## Electronics
 
